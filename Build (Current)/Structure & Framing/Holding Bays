@@ -1,0 +1,71 @@
+====== Silo
+    = Placeholder
+        -   This is a placeholder for a section that isn't written.
+        -   The game will now divert you to Inter_BeginLoop, ready to start another run.
+        -   The game might break during this run, depending on where you were before hitting this placeholder.
+            -> LoopStart
+           
+            
+    = AltText
+        -   This is a placeholder for alt. text that I haven't written.
+        -   The game will now divert you to Inter_BeginLoop, ready to start another run.
+        -   The game might break during this run, depending on where you were before hitting this placeholder.
+            -> LoopStart
+        
+    
+====== FuckUp
+    = CheatWin
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: Silo.FuckUp.CheatWin 
+            -> END
+                
+    = Misc
+        -   WE ARE SORRY TO ANNOUNCE THAT THIS GREAT WESTERN RAIL SERVICE TO A COHERENT STORY HAS BEEN DIVERTED TO NONSENSE TOWN.
+        -   If you see this screen, I've fucked up the coding.
+        -   The End, motherfucker.
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: Silo.FuckUp.Misc
+           -> END
+               
+    = Run2
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: Silo.FuckUp.Run2
+            -> END
+                
+    = Run3
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: Silo.FuckUp.Run3
+            -> END
+                
+    =   Playthroughs_TooMany
+        -   You've apparently completed the game more than twice.
+        -   You have completed –{Playthrough}– runs
+            -> END
+   
+   
+====== UhOh
+    = No_Ending
+        -   You've been directed to an ending without having triggered any particular game state.
+        -   The game will now divert you to Inter_BeginLoop, ready to start another run.
+        -   The game might break during this run, depending on where you were before hitting this placeholder.
+            -> LoopStart
+        
+    = FunctionResult
+        -   You've been directed to an ending that should only exist as the initial value of a temporary variable inside a function.
+        -   The game will now divert you to Inter_BeginLoop, ready to start another run.
+        -   The game might break during this run, depending on where you were before hitting this placeholder.
+            -> LoopStart
+        
+    = EndWithoutEnd1 
+        -   You've somehow made it into the Game 1 Sorter whilst having a current score of "None".
+        -   The game will now divert you to Inter_BeginLoop, ready to start another run.
+        -   The game might break during this run, depending on where you were before hitting this placeholder.
+            -> LoopStart
+                
+    = EndWithoutEnd2
+        -   You've somehow made it into the Game 2 Sorter whilst having a current score of "None".
+        -   The game will now divert you to Inter_BeginLoop, ready to start another run.
+        -   The game might break during this run, depending on where you were before hitting this placeholder.
+            -> LoopStart
+        
+    = EndWithoutEnd3
+        -   You've somehow made it into the Game 3 Sorter whilst having a current score of "None".
+        -   The game will now divert you to Inter_BeginLoop, ready to start another run.
+        -   The game might break during this run, depending on where you were before hitting this placeholder.
+            -> LoopStart

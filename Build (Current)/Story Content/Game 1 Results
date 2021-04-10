@@ -1,0 +1,19 @@
+====== Game1
+        = Result_1XX 
+            How very lazy, not even spotting the cracker that was there for the munchings. 
+            With behaviour like this, you'll never be the plumpest hog in the trough.
+                -> LoopStart
+        
+        = Result_2XX
+            YOU LOSE! 
+                
+            You did not even hold that lovely cracker that you saw between your trotters, let alone munch it.
+                -> LoopStart
+        
+        = Result_3XX
+            Meanwhile, I looked at the cracker.
+            YOU LOSE! 
+            You had a cracker but you did not munch it.
+                -> LoopStart
+                
+        -> DONE

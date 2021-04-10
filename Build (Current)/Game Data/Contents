@@ -1,0 +1,50 @@
+//Main File
+
+    -> Start
+        -> Start.SaveWorld
+        -> Start.SpotCracker
+        -> Start.Listen
+        
+    -> Middle
+        -> Middle.Ritz_Get
+        
+    -> Ending
+    
+    
+//Sorting
+
+    -> Sorting
+        -> Sorting.RunSorter
+        -> Sorting.Game1Sorter
+        -> Sorting.Game2Sorter
+        -> Sorting.Game3Sorter
+        
+    -> Results
+        -> Results.Win
+        -> Results.Game1
+        -> Results.Game2
+        -> Results.Game3
+        -> Results.UhOh
+
+
+//Holding Bays
+    
+    -> Silo
+        -> Silo.FuckUp
+        -> Silo.Placeholder
+        
+    -> BayOfOldness
+        -> BayOfOldness.OldMiddle
+        -> BayOfOldness.Ritz_Get1
+        -> BayOfOldness.Ritz_Get2
+    
+    
+//Frame
+    
+    -> Intro
+        -> Intro.Curtain_Up
+        -> Intro.Rules
+    -> Tantrum
+        -> Tantrum.BigBoots
+        -> Tantrum.VeryRudeIndeed
+    -> LoopStart

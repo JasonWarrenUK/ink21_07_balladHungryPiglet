@@ -1,0 +1,28 @@
+= Logical_Operators
+    -> DONE
+    
+    &&                                          (And)
+    ||                                          (Or)
+    
+= Numerical_Operators
+    X + Y                                       (Add X to Y)
+    X - Y                                       (Subtract Y from X)
+    X * Y                                       (Multiply X by Y)
+    X / Y                                       (Divide X by Y)
+    X % Y (or X MOD Y)                          (The remainder of X divded by Y)
+    POW(X, Y)                                   (X to the power of Y)
+    RANDOM(X, Y)                                (A random number from a minimum of X to a maximum of Y)
+        -> DONE
+        
+= Phrases_Etc
+    xxxxx # xxxxx                               (Game text, then tag)
+    * -> Target_Address                         (Fallback, No Text)
+    * ->                                        (Fallback, Text)
+        "Text to display" -> Target_Address     
+        -> DONE
+        
+= Alternative_Text
+    {|}                                         (Sequence)
+    {&|}                                        (Cycle)
+    {!|}                                        (Limited)
+    {~|}                                        (Shuffle)

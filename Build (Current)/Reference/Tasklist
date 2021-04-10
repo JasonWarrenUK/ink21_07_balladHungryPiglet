@@ -1,0 +1,41 @@
+====== Tasks_ThisBuild
+    TODO    Search for Silo.Placeholder & write all empty weaves
+                
+    TODO    Search for Silo.AltText & write all empty alternatives
+    
+    TODO    Content: Write an introduction for Run 3
+                -> Intro.Curtain_Up.Run3
+    
+    TODO    Flow Check: Is each ending achievable?
+                //e.g. Start.SaveWorld.Manic might make some Game 3 endings moot
+    
+    TODO    Sort out the SeenNow/SeenEver palava
+    
+    TODO    Test the possible configurations of the choices at the end of Start.SaveWorld
+    
+    TODO    Check the flow of Clear tags etc
+    
+    TODO    Basic CSS
+
+        -> DONE
+
+
+====== Tasks_Later
+    
+    -   Add values to the variables in Start.SaveWorld
+                -> Start.SaveWorld
+    -   Write some endings for Game 4
+    -   Figure out how to use Constants
+    -   Create a VAR/List to track Rabbit states?
+    -   Create a scoring tunnel to run Sorting.Filters whenever you hit Get, Got or Munch
+    -   Variable: Result Trend
+            //VAR ResultTrend = 0                 
+            Tracks how the player is doing relative to previous attempts
+    -   Variable: Result Trend
+            /*VAR ResultTrend = 0                 
+                Tracks how the player is doing relative to previous attempts*/
+    -   Do something with the rabbit variables in Start.SaveWorld
+    -   Turn the shuffle blocks in Start.SaveWorld into a thread or function
+    -   Make a different route through Start.SpotCracker for a subsequent playthrough where you've already seen the cracker
+    
+        -> DONE

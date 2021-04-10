@@ -1,0 +1,36 @@
+====== RunSorter
+        {Playthrough:
+            - 1: ScoreSetter(1, ScoreNow)
+                -> Game1Sorter
+            - 2: ScoreSetter(2, ScoreNow)
+                -> Game2Sorter
+            - 3: ScoreSetter(3, ScoreNow)
+                -> Game3Sorter
+        }
+
+====== Game1Sorter
+        {ScoreNow:
+            - None: -> UhOh.EndWithoutEnd1
+            - Missed: -> Game1.Result_1XX
+            - Seen: -> Game1.Result_2XX
+            - Got: -> Game1.Result_3XX
+            - Munched: -> Win.WinPlaceholder1
+        }
+
+======Game2Sorter
+        {ScoreNow:
+            - None: -> UhOh.EndWithoutEnd2
+            - Missed: -> Game2.2Missed_Check1
+            - Seen: -> Game2.2Seen_Check1
+            - Got: -> Game2.2Got_Check1
+            - Munched: -> Win.WinPlaceholder2
+        }
+        
+====== Game3Sorter
+        {ScoreNow:
+            - None: -> UhOh.EndWithoutEnd3
+            - Missed: -> Game3.3Missed_Check2
+            - Seen: -> Game3.3Seen_Check2
+            - Got: -> Game3.3Got_Check2
+            - Munched: -> Win.WinPlaceholder3
+        }

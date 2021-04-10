@@ -1,0 +1,188 @@
+====== Contents_Functions_InUse
+    = Functions__InUse_GameLoop
+        • ScoreSetter(RunNum, RunScore)
+            /*  Moves the score for the current run (RunScore) into ScoreX.
+                This permanently stores the score and allows RunScore to be reset for the next run. */
+        • RunReset
+            
+            -> DONE
+    
+    = Functions_InUse_CrackerTrackers
+        • CrackerTracker_See
+        • CrackerTracker_Get
+        • CrackerTracker_Munch
+            
+            -> DONE
+
+====== Contents_Functions_Examples
+    = Functions_Examples_Random
+        • Example_getRandom()
+    
+            -> DONE
+
+
+
+
+====== function ScoreSetter(RunNum, RunScore)
+    {RunNum:
+        -1: ~ Score1 = RunScore
+        -2: ~ Score2 = RunScore
+        -3: ~ Score3 = RunScore
+        }
+        
+
+====== function RunReset
+                {DebugMode == true: 
+                    ••• Starting 'RunReset' •••
+                        Values prior to running the function:
+                        
+                        • Seen Tracking •
+                            SeenEver is {SeenEver}
+                            SeenNow is {SeenNow}
+                            SeenCount is {SeenCount}
+    
+                        • Got Tracking •
+                            GotEver is {GotEver}
+                            GotNow is {GotNow}
+                            GotCount is {GotCount}
+                            Reason_Now_NoMunch is {Reason_Now_NoMunch == "": empty|{Reason_Now_NoMunch}}
+                        
+                        • Munch Tracking •
+                            MunchEver is {MunchEver}
+                            MunchNow is {MunchNow}
+                            MunchCount is {MunchCount}
+                    
+                        • Score Tracking •
+                            ScoreNow is {ScoreNow}
+                    ••• Running •••
+                    }
+    
+    ~ SeenNow = false
+    ~ GotNow = false
+    ~ MunchNow = false
+    ~ ScoreNow = None
+    ~ Reason_Now_NoMunch = ""
+                
+                {DebugMode == true:
+                    Values after running function:
+                        
+                        SeenEver is {SeenEver}
+                        SeenNow is {SeenNow}
+                        SeenCount is {SeenCount}
+                        
+                        GotEver is {GotEver}
+                        GotNow is {GotNow}
+                        GotCount is {GotCount}
+                            Reason_Now_NoMunch is {Reason_Now_NoMunch == "": empty|{Reason_Now_NoMunch}}
+                        
+                        MunchEver is {MunchEver}
+                        MunchNow is {MunchNow}
+                        MunchCount is {MunchCount}
+                        
+                        ScoreNow is {ScoreNow}
+                    ••• Concluding •••
+                    }
+
+
+====== function CrackerTracker_See
+                {DebugMode == true: 
+                    ••• Starting CrackerTracker_See... NOW! •••
+                        Values prior to running function:
+                        
+                        SeenEver is {SeenEver}
+                        SeenNow is {SeenNow}
+                        SeenCount is {SeenCount}
+                        ScoreNow is {ScoreNow}
+                    
+                    ••• Running CrackerTracker_See... NOW! ••• 
+                    }
+        
+    {SeenEver == false: {~ SeenEver = true}}
+    ~ SeenNow = true
+    ~ SeenCount ++
+    ~ ScoreNow = Seen
+    
+                {DebugMode == true: 
+                    Values after running function:
+                        
+                        SeenEver: {SeenEver}
+                        SeenNow: {SeenNow}
+                        SeenCount: {SeenCount}
+                        ScoreNow is {ScoreNow}
+                    
+                    ••• Concluding CrackerTracker_See •••
+                    }
+
+====== function CrackerTracker_Get
+                {DebugMode == true: 
+                    ••• CrackerTracker_Get •••
+                    Values prior to running function:
+                        
+                        GotEver is {GotEver}
+                        GotNow is {GotNow}
+                        GotCount is {GotCount}
+                        ScoreNow is {ScoreNow}
+                    
+                    ••• Running •••
+                    }
+    
+    {GotEver == false: {~ GotEver = true}}
+    ~ GotNow = true
+    ~ GotCount ++
+    ~ ScoreNow = Got
+
+                {DebugMode == true: 
+                    Values after running function:
+                    
+                        GotEver is {GotEver}
+                        GotNow is {GotNow}
+                        GotCount is {GotCount}
+                        ScoreNow is {ScoreNow}
+                    
+                    ••• Concluding •••
+                    }
+
+
+====== function CrackerTracker_Munch
+                {DebugMode == true: 
+                    ••• Starting CrackerTracker_Munch •••
+                    Values prior to running function:
+                        
+                        MunchEver is {MunchEver}
+                        MunchNow is {MunchNow}
+                        MunchCount is {MunchCount}
+                        ScoreNow is {ScoreNow}
+                    
+                    ••• Running •••
+                    }
+    
+    {- MunchEver == false: {~ MunchEver = true}}
+    ~ MunchNow = true
+    ~ MunchCount ++
+    ~ ScoreNow = Munched
+    
+                {DebugMode == true: 
+                    Values after running CrackerTracker_Munch:
+                        
+                        MunchEver is {MunchEver}
+                        MunchNow is {MunchNow}
+                        MunchCount is {MunchCount}
+                        ScoreNow is {ScoreNow}
+                    
+                    ••• Concluding •••
+                    }
+
+
+=== function Example_getRandom()
+    //Assigning a Random Value to a Variable
+
+    {shuffle:
+        - ~ return "a Nobbly Bobbly"
+        - ~ return "Rupert's yellow wellies"
+        - ~ return "toots for days"
+        }
+        
+    /*  Example Usage
+            VAR x = ""
+            ~ x = getRandom()
+            I must remember that I have {x}! It's {x}! */

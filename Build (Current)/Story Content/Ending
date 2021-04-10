@@ -1,0 +1,32 @@
+====== Ending
+    # CLEAR 
+
+    - Rabbit carried on proudly...
+        "I shall venture into the castle and put an end to Ganon's schemes!"
+    
+    * "That sounds scary!"
+        -- She huffed and miffed a bit and said something about how I wouldn't understand because my brain has joy con drift.
+            S<>->Poor_Deer
+
+    * "You're very brave!"
+        -- "Well I'm glad you finally noticed!"
+            S<>->Poor_Deer
+
+    + {Playthrough < 3}{GotNow == true} [Munch the cracker.] 
+        -- -> Ritz_Munch
+
+    + {Playthrough == 3}{GotNow == true} [YESSSSS I GOT THE CRACKER PUT IT IN MY PIGGIT FACE I HAV WAITED TOO LONG.] 
+        -- -> Ritz_Munch
+
+    //this one's a bit of a backup choice, does it get used??
+    + ->
+        I honestly don't know what I said next because I was tooting happily, but apparently it wasn't too bad because s<>->Poor_Deer
+
+    - (Poor_Deer) he carried on, turning her attention back to blowing up a deer.
+        ++ [But sadly, I was still hungry.]
+            -> RunSorter
+
+    - (Ritz_Munch) I did a crunch-crunch-crunch and patted my porky belly.
+        {CrackerTracker_Munch()}
+        ++ [And possibly a little toot.]
+            -> RunSorter

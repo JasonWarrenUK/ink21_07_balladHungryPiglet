@@ -1,0 +1,45 @@
+====== Game2
+        -   (2Missed_Check1)    
+                {Score1:
+                    Missed: -> Result_11X
+                    Seen: -> Result_21X
+                    Got: -> Result_31X
+                }
+                
+        -   (2Seen_Check1)
+        -   (2Got_Check1)
+        
+        -   (Result_11X) That is twice in a row that you have not seen the cracker lying on the floor. 
+            And frankly that is unacceptapig.
+                -> LoopStart
+                
+        -   (Result_12X) YOU LOSE! 
+            You did not even hold that lovely cracker that you saw between your trotters, let alone munch it.
+                -> LoopStart
+        
+        -   (Result_13X) Meanwhile, I looked at the cracker.
+            SO CLOSE! You had a cracker this time, but you did not munch it.
+                -> LoopStart
+        
+        -   (Result_21X)
+        
+        -   (Result_31X)
+        
+        -   (Result_22X) Placeholder 
+                -> Silo.Placeholder
+        
+        -   (Result_23X) Placeholder 
+                -> Silo.Placeholder
+        
+        -   (Result_32X) Right, you actually did worse this time. 
+            You went from holding a cracker (but not eating it) to struggling with the very concept of holding a cracker.
+                -> LoopStart
+        
+        -   (Result_33X) Meanwhile, I looked at the cracker.
+            Right, I just want to check... you know you need to eat the cracker, right? Like, actually eat it. Not just hold it.
+                -> LoopStart
+        
+            -> DONE
+    
+        
+    

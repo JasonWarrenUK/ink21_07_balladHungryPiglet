@@ -1,0 +1,88 @@
+
+
+=== Example_TheIntercept ===
+//Copied from The Intercept
+
+// Character_variables
+    - We track just two, using a +/- scale
+    
+    VAR forceful = 0
+    VAR evasive = 0
+
+// Inventory_Items
+    
+    VAR teacup = false
+    VAR gotcomponent = false
+
+// Story_States 
+    - Tracking Methods: 
+        * read counts of knots
+        * functions that collect up more complex logic
+        * variables
+    
+    VAR drugged = false
+    VAR hooper_mentioned = false
+    VAR losttemper = false
+    VAR admitblackmail = false
+
+// What kind of clue did we pass to Hooper?
+    
+    CONST NONE = 0
+    CONST STRAIGHT = 1
+    CONST CHESS = 2
+    CONST CROSSWORD = 3
+    VAR hooperClueType = NONE
+
+    VAR hooperConfessed = false
+
+    CONST SHOE = 1
+    CONST BUCKET = 2
+    VAR smashingWindowItem = NONE
+
+    VAR notraitor = false
+    VAR revealedhooperasculprit = false
+    VAR smashedglass = false
+    VAR muddyshoes = false
+
+    VAR framedhooper = false
+
+// What did you do with the component?
+    
+    VAR putcomponentintent = false
+    VAR throwncomponentaway = false
+    VAR piecereturned = false
+    VAR longgrasshooperframe = false
+
+// DEBUG mode
+    - Adds a few shortcuts - remember to set to false in release!
+    
+    VAR DEBUG = false
+        {DEBUG:
+            IN DEBUG MODE!
+            *   [Beginning...]  -> start
+            *   [Framing Hooper...] -> claim_hooper_took_component
+            *   [In with Hooper...] -> inside_hoopers_hut
+        - else:
+            // First diversion: where do we begin?
+         -> start
+        }
+
+Wrap up character movement using functions
+    - In case we want to develop this logic in future
+        -> DONE
+    
+    === function lower(ref x)
+        ~ x = x - 1
+
+    === function raise(ref x)
+        ~ x = x + 1
+        
+//Divert_Destinations
+=== start
+    -> DONE
+
+=== claim_hooper_took_component
+    -> DONE
+        
+=== inside_hoopers_hut
+    -> DONE

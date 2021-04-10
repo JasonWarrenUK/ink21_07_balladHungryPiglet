@@ -1,0 +1,312 @@
+VAR z = 0
+VAR y = 0
+
+=== Breakdowns ===
+    = If_Else
+        {                   
+            - z == 0:           //Is X equal to 0?
+                ~ y = 0         //If yes, Y is now 0. Leave the test.
+                
+            - z > 0:            //If no, is X greater than 0?
+                ~ y = z - 1     //If yes, Y is now equal to X - 1. Leave the test.
+                
+            - else:             //If no, then...
+                ~ y = z + 1     //Y is now equal to X + 1. Leave the test.
+        }                   
+        
+        -> DONE
+    
+    = Switch_Guide
+        { z:                //If the variable 'z' is equal to...
+            - 0: zero           // 0, print "zero"
+            - 1: one            // 1, print "one"
+            - 2: two            // 2, print "two"
+            - else: lots        // anything else, print "lots"
+        }
+    
+        -> DONE
+
+=== Dream === //Switch Example with Diverts
+    VAR visited_snakes = 0
+    VAR visited_poland = 0
+    VAR fear = 0
+
+    {
+    - visited_snakes && not dream_about_snakes:         //Visited snakes but not dreamed about them?
+        ~ fear++                                        //If yes, increase your fear
+        -> dream_about_snakes                           //Then dream about snakes
+    
+                                                        //If no, then...
+    - visited_poland && not dream_about_polish_beer:    //Visited Poland but not dreamed about beer?
+        ~ fear--                                        //If yes, decrease your fear
+        -> dream_about_polish_beer                      //Then dream about beer
+
+    - else:                                             //If nothing else, then...
+        -> dream_about_marmalade                        //Breakfast-based dreams have no effect
+    }
+
+    = dream_about_polish_beer
+        -> DONE
+    = dream_about_snakes
+        -> DONE
+    = dream_about_marmalade
+        -> DONE
+
+=== Logic_Order ===
+    This is the order in which the story will execute apparently simultaneous instructions
+
+    1. Removal of * choices
+    2. Evaluation of Knots/Stitches seen
+        -> DONE
+
+=== Syntax_Order ===
+    This is the correct order in which to write instructions on a single line
+        -> DONE
+        
+    = Broad_Syntax
+        [Prefix][Core][Suffix]
+            -> DONE
+    
+    = Granular_Syntax
+                                        -> DONE
+        Prefix
+            |   [Mark]                  -  *
+            |   [Label]                 (Name_of_Label)
+            |   [Condition Open]        {Condition:
+        Core
+            |   [True Text]             Text
+            |                           //Can include Alt Text
+            |   [Divider]               |
+            |   [False Text]            Text
+            |                           //Can include Alt Text
+            |   [Condition Close]       }
+
+        Suffix
+            |   [Tag]                   #TagName
+            |   [Divert]                ->Knot.Stitch.Label
+            |   [Comment]               //Comment Text
+
+        /*
+            -*(Label){Condition: True Text|False Text} #TagName ->Knot.Stitch.Label //Comment Text
+        */
+
+=== Commands ===
+    = Choices
+        - Fallback Choice (Without Text)
+            Rather than having to click on any choice, the story simply diverts straight to a target address
+            
+            * -> Target_Address
+        
+        - Fallback Choice (With Text)
+            Some text displays before the story diverts to a target address
+            
+            * ->
+            "Text to display" -> Target_Address
+
+    = Conditional Choice
+        Won't display unless the condition is tested and returns true
+
+        * {Condition to Test} Test displayed if test returns true
+
+    = Alternative Text & Sequences
+        - Alternative text can...
+            * Be nested
+            * Have blank elements
+            * Include diverts  
+
+        - Sequence
+            // Uses the syntax {Option|Option}.
+            // This will cycle through the options, in order.
+            // Once it has returned the last option, it will return that option every time.
+
+            |   This is {the 1st thing it says|the 2nd thing it says|every other thing it says}.
+
+        - Cycle
+            // Uses the syntax {&Option|Option}.
+            // This will cycle through the options, in order.
+            // Once it has resturned the last option, it will restart the Cycle
+        
+            |   This is {&the 1st, 4th & 7th thing it says | the 2nd, 5th & 8th thing it says | 3rd, 6th & 9th thing it says}.
+
+        - Limited
+            // Uses the syntax {!Option|Option}.
+            // This will cycle through the options, in order.
+            // Once it has returned the last option, it will not return any further options at all.
+        
+            |   This is {!the 1st thing it says | the 2nd thing it says | the last thing it says}.
+
+        - Shuffle
+            // Uses the syntax {~Option|Option}.
+            // This will return a randomly selected option every time it executes.
+            // It will do this endlessly.
+
+            |   This is {~one of the things it says | another of the things it says | yet another of the things it says}      
+    
+    = Conditional Text
+        {TestCondition: If test true | If test false}
+
+        (Example)
+            The train jolted and rattled. { mood > 0:I was feeling positive enough, however, and did not mind the odd bump|It was more than I could bear}.
+            * { not knows_about_wager } 'But, Monsieur, why are we travelling?'[] I asked.
+            * { knows_about_wager} I contemplated our strange adventure[]. Would it be possible?
+        
+        - Notes
+            Can be nested
+        
+Variables
+    = Types of Global Variable
+        5           Integer
+        5.0         Floating Point
+        five        Content (Both text and Ink)
+        ->five      Address
+        ?           True/False(?)
+
+        Note that mathematical operations will return a result that corresponds to the variable's type
+        So "7" / "3", if these are integer variables, will return "2"
+
+        (Casting Directly???)
+            {INT(3.2)} is 3. 
+            {FLOOR(4.8)} is 4.
+            {INT(-4.8)} is -4. 
+            {FLOOR(-4.8)} is -5. 
+            {FLOAT(4)} is, um, still 4. 
+
+    Global Variables can be accessed & altered from outside the Ink file
+    That means that they're useful for communicating with things like Unity
+
+    = Declaring a Global Variable
+        This is how you create a global variable. The syntax is...
+            VAR name_of_variable = (initial value)
+
+        The initial value will define the type of variable
+        
+        (Examples)
+            VAR friendly_name_of_player = "Jackie"          Declare a content global variable (Jackie)
+            VAR age = 23                                    Declare an integer global variable (23)
+            VAR a_colour = ""                               Declare a content global variable ()
+                ~ a_colour = "{~red|blue|green|yellow}"     Overwrite the content with a random choice
+                {a_colour}                                  Return the now-permanent colour choice
+
+                VAR a_colour = "{~red|blue|green|yellow}"   Explicitly disallowed
+
+    = Printing a Global Variable
+        By writing {var_name} in the text, you can print the current value of that variable.
+        
+        (Example)
+            -   My name is Jean Passepartout, 
+                but my friends call me {friendly_name_of_player}. 
+                I'm {age} years old.
+
+    = Modifying a Global Variable
+        This is how you can modify the value of a pre-existing global variable
+        Essentially the syntax uses the Declare method, but replaces "VAR" with "~"
+
+        *   Overriding a Value
+                Putting a value after "=" will override the value
+                without giving any shits about the current value
+
+                ~ Jason_knows_how_to_code = true
+                ~ Jason_bornin = 1985
+
+        *   Modifying a Value without Overriding
+                | Putting an equation after "=" will modify the value 
+                | with reference to the current value
+
+                ~ x = (x * x) - (y * y) + c
+                ~ y = 2 * x * y
+
+        (Examples)
+            * Perception of reality
+                How many years have passed since the fall of a certain empire 
+                according to a culture that subscribes to a Short Chronology delusion 
+                
+                ~ wrong_timesince_fall = (dateof_now - dateof_fall) * distortion_currentview
+
+    = Testing a Global Variable
+        Uses the Condition syntax along with the Modifying syntax
+
+        In essence, these examples:
+            { x == 1.2 }
+            { x / 2 > 4 }
+            { y - 1 <= x * x }
+
+        Are shorthand for these statements:
+            If the variable called "x" is equal to 1.2, then...
+            If half of the variable called "x" is greater than 4, then...
+            If the variable called "y" is at least 1 higher than the square of the variable called "x", then...
+
+Weave Reference
+    = Marking
+        A Gather is marked with a -
+        An option is marked with a * or a +
+        Fewer symbols is "higher" than more symbols
+        For example, - is higher than --
+
+    = Behaviour (General)
+        After entering a Gather or an Option...
+            The game provides content sequentially, line to line
+            This continues until it encounters a new mark.
+
+    = Moving from...
+        A Gather to...
+            A Gather that is...
+                Higher, you enter the new Gather
+                Equal, you enter the new Gather
+                Lower, you enter the new Gather
+            An Option that is...
+                Higher, you skip over that Option and all subsequent content until encountering a higher/equal gather
+                Equal, the game will look downwards to see how many more same-level options are provided and present you with all of them
+                Lower, the game will look downwards to see how many more same-level options are provided and present you with all of them
+        An Option to...
+            A Gather that is... 
+                Higher, you enter the new Gather
+                Equal, you enter the new Gather
+                Lower, you enter the new Gather
+            An Option that is...
+                Higher, you skip over the Option (with all its sub-content) & go to the next higher/equal Gather
+                Equal, you skip over the Option (with all its sub-content) & go to the next higher/equal Gather
+                Lower, the game will look downwards and present you with all same-level options
+
+    = Addressing Labels
+        To call a label called (Label), the address is {Knot.Stitch.Label}
+        If the Label being called is within a Knot without Stitches, the address becomes {Knot.Label}
+
+    = Diverting to Labels
+        Normally, this works just like diverting to a Stitch or a Knot. 
+        However, if diverting to an OPTION the divert goes to the OUTPUT of having chosen that option, so...
+            * Square bracketed text will not be printed
+            * Once-Only options will be used up without having been seen
+
+Game Queries
+    = Choice Counting
+        CHOICE_COUNT()
+        This queries the number of options created so far in the current chunk. 
+        
+        (Example)
+            The following Ink code returns two options, B and C.
+
+            *   {test false}            (A)     Option A
+            *   {test true}             (B)     Option B
+            *   {CHOICE_COUNT() == 1}   (C)     Option C
+            (Explanation)
+                The game evaluates Option A...
+                    1.  The game tests the Condition
+                    2.  The test returns False
+                    3.  The option is not printed
+                Then the game evaluates Option B...
+                    4.  The game tests the Condition
+                    5.  The test returns "True"
+                    6.  The option is printed
+                Finally the game evaluates Option C.
+                    7.  The game queries the number of options printed in this chunk
+                    8.  The query returns with a value of "1" (Option B was printed)
+                    9.  The game tests is this value is exactly equal to 1
+                    10. The test returns true
+                    11. The option is printed
+        
+        This could be used to limit how many options a player gets on a turn.
+
+    = String Queries
+        { "Yes, please." == "Yes, please." }        True if X is equal to Y
+        { "No, thank you." != "Yes, please." }      True if X is different to Y
+        { "Yes, please" ? "ease" }  

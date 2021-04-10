@@ -1,0 +1,28 @@
+====== Middle
+    = StartoftheMiddle
+        Anyway, 
+            {SeenEver:
+                - true: <>I knew where the cracker was so I decided wevva to get it wiv a sneaky trotter.
+                        
+                - false: <>I was a bit poopgrumped cos all I want is a bit of a snacky cracker and I don't know where not none of them are. 
+                    {~ ScoreNow = Missed}
+                }
+        
+        +   {SeenEver == true}[Of course.]
+                {CrackerTracker_Get()}
+        
+        +   {SeenEver == true && GotCount == 0}[I don't fink so. Dangerous.]
+                {~ Reason_Now_NoMunch = Fearful}
+        
+        +   (Disrespect){SeenEver == true && GotCount >= 1} \ {&NO IT IS DISRESPIGTFUL|Alt 2 of 2}. -> Silo.AltText
+                {~ Reason_Now_NoMunch = Respectful}
+        
+        +   {SeenEver == false} [Most troubling.]
+                {~ Reason_Now_NoMunch = NotSeen}
+        
+        - -> EndoftheMiddle
+        
+    = EndoftheMiddle
+        
+        -> Ending
+    

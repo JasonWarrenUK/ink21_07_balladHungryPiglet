@@ -1,0 +1,46 @@
+====== Variables
+    //Metadata
+        VAR DebugMode = false       //Are you playing in Debug Mode?
+        
+        LIST Score =    None = 0, Missed, Seen, Got, Munched
+        
+            VAR Score1 = None
+            VAR Score2 = None
+            VAR Score3 = None
+            VAR ScoreNow = None
+        
+        LIST PlaythroughName =      Unplayed = 0, First, Second, Third
+            
+            VAR Playthrough = Unplayed                        
+        
+        VAR ResultAddress   = -> UhOh.No_Ending
+
+        
+    //Cracker Tracker    
+        VAR SeenEver        = false
+            //Have you ever seen the cracker on any playthrough?
+        VAR SeenNow         = false
+            //Have you seen the cracker on this playthrough?
+        VAR SeenCount       = 0
+            //How many times have you seen the cracker in total?
+            
+        VAR GotEver         = false
+            //Have you ever picked up the cracker on any playthrough?
+        VAR GotNow          = false
+            //Have you got the cracker right now?
+        VAR GotCount        = 0
+            //How many times have you picked up the cracker in total?
+            
+        VAR MunchEver       = false
+            //Have you ever eaten the cracker?
+        VAR MunchNow        = false
+            //Have you eaten the cracker on this playthrough?
+        VAR MunchCount      = 0
+            //How many times have you eaten the cracker in total?
+            
+    //Piglet States
+        LIST Reasons_NoMunch =  Ignorant, Fearful, Respectful
+            
+            VAR Reason_Now_NoMunch = ""
+    
+    ->->

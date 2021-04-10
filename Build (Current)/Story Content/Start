@@ -1,0 +1,141 @@
+====== Start
+    = BeginPlaythrough
+        //Always come through here, it increases the Playthrough count
+        ~ Playthrough ++
+        
+        Okay, time for your <> 
+            {Playthrough: 
+                - 1: first <>
+                - 2: second <>
+                - 3: third <>
+                }
+        {~brave|spirited|desperate} {~attempt|try|struggle}.
+        
+        Let's {SeenEver == false:find a snack|eat that cracker}!
+            
+            -> SaveWorld
+
+    = SaveWorld
+
+        TODO    BOOKMARK
+        ~ temp Focus = ""
+        ~ temp Activity = ""
+        ~ temp Commitment = ""
+        ~ temp Pronouncement = ""
+        ~ temp Ambition = ""
+        
+        - (Rabbit_Shuffle1) Rabbit was <>
+                {shuffle:
+                    -   busy <>
+                            {~ Focus = busy}
+                    -   very focussed on <>
+                            {~ Focus = focus}
+                    -   deeply committed to <>
+                            {~ Focus = committed}
+                    -   eartip-deep in <>
+                            {~ Focus = deep}
+                    }
+                {shuffle:
+                    -   saving Hyrule <>
+                            {~ Activity = save}
+                    -   paragliding from cliffs <>
+                            {~ Activity = paraglide}
+                    -   compromising Hyrule's biodiversity <>
+                            {~ Activity = bioterror}
+                    } 
+                {shuffle:
+                    -   with great intensity
+                            {~ Commitment = intense}
+                    -   haphazardly
+                            {~ Commitment = haphazard}
+                    -   without regret
+                            {~ Commitment = no regret}
+                    }.
+                
+        -   (Rabbit_Shuffle2) "Piggit," <>
+                {shuffle:
+                    -   declared <>
+                            {~ Pronouncement = declare}
+                    -   said <>
+                            {~ Pronouncement = say}
+                    -   intoned <>
+                            {~ Pronouncement = intone}
+                    }
+                she, "I am going to <>
+                {shuffle:
+                    -   save the world <>
+                            {~ Ambition = save}
+                    -   fight Ganon <>
+                            {~ Ambition = fight}
+                    -   blow up a deer <>
+                            {~ Ambition = explode}
+                }!"
+        
+            +   [Good lord!] "<>
+                {Ambition:
+                    - "save":       "Shave the world, Rabbit?", 
+                    - "fight":      "Fight gammon, Rabbit?", 
+                    - "explode":    "That's appalling, Rabbit!", 
+                }
+                <>I said, most {~perturberous|inscroopitably|kerpiffled|confustered}. 
+        
+        -   "But it's almost time for {~tea|dins|elvenses}! You must be {~doing jokings|floofin' my snout|piggin' bonkers|out of your little burrow}, missis!"
+            
+            +  I [protested with great porky dignity]squealed my snorting outrage and, after five minutes (when I had calmed down a little), Rabbit said "I am quite serious."
+        
+        -   "Oh, I see!", I said sagely.
+        
+            *   I was [confident I was being my brainy best.]in a state of some confustion.
+                Best to just listen as Rabbits are generally right.
+                    -> Listen
+                    
+            *   {SeenEver == false}But I had more importit fings to be doing[.], for something grabbed my attention from the corner of my eye.
+                    -> SpotCracker
+                    
+            *   {CHOICE_COUNT() <= 1 && SeenEver == false}Rabbit [looked impressed when I nodded wisely.]asked me why my head was flopping about, but I was not really listening because <>
+                    -> SpotCracker
+                    
+            *   {Playthrough == 2 && SeenEver == false}[Try to look like I'm paying attention whilst really looking for a cracker.] My little piggle eyestalks got a bit confustered swivelling this way and that, but it was worth it.
+                    -> SpotCracker
+                    
+            *   {Playthrough == 2 && SeenEver == true}[Check if that cracker's under the table like I fink it is.] Yep, der it is. 
+                    -> Middle
+                    
+            *   {Playthrough == 3 && SeenEver == true}[GIMME CRACKER.] 
+                    -> Middle
+                    
+            +   (Fallback_Start1) -> Fallback_Start2
+                --  (Fallback_Start2) ERROR: This is a fallback choice, BAD!
+                        -> Middle
+
+
+    = SpotCracker
+        -   I had spotted a Ritz cracker under the coffee table!
+            I decided to listen carefully to the Rabbit for now, though, as it's very srs biz.
+                {CrackerTracker_See()}
+            
+            +   [...] And also I have been told not to snuffle under the table. 
+
+        -   (Listen) So I said to Rabbit...
+            
+            +   "I'm all ears!" 
+        
+        -   But finking about it, though, I am actually maybe a bit curly tail.
+        
+            +   {Playthrough == 1} [This isn't really that important, Rupert.]
+                --  Also trotters.
+                    ++  [I'm getting a bit annoyed now.] 
+                        -> Middle
+
+            +   {Playthrough == 2} [Get a move on Rupert!]
+                --  This conversation seems very familiar.
+                    ++  We've had it[ before.]-
+                        --  I wonder if we've had it before.            
+                            ++  Lit[erally two minutes ago, Rupert.]-
+                                --  Anyway you're wasting valuable biscuit time with your snuffling, so help me get the munches please.
+                                    -> Middle
+
+            +   {Playthrough == 3} [Sigh.]
+                --  I keep getting this feeling of Dejipoo.
+                    ++  Do you mean Deja Vu?
+                        -> Middle

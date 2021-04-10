@@ -1,0 +1,142 @@
+====== DebugChoose 
+        Which mode do you want to play in?
+        
+        +   [Player Mode]
+        
+            --  You will experience the story as if you were a player.
+                All code and logic will be hidden.
+                Confirm this choice?
+        
+            ++  [Yes]
+                {DebugMode: 
+                    - true: ~ DebugMode = false
+                            -> DebugChosen
+                    - else: -> DebugChosen
+                }
+        
+            ++  [No]
+                -> DebugChoose
+        
+        +   [Debug Mode]
+            
+            --  In Debug Mode, code & variables will be returned to the screen regularly.
+                Confirm this choice?
+            
+            ++  [Yes]
+                {DebugMode:
+                    - false: ~ DebugMode = true
+                            -> DebugChosen
+                    - else: -> DebugChosen
+                }
+                
+            ++  [No]
+                -> DebugChoose
+        
+        -   (DebugChosen) Okay, Debug Mode is {DebugMode == true:On|Off}.
+                #CLEAR
+                -> TestChoose
+
+
+====== TestChoose
+    Gonna play, or testing something?
+        + Playing
+            ->->
+        + Testing
+            -> Testbed
+
+
+====== Intro
+    -> Curtain_Up
+    
+    = Curtain_Up
+    
+        +   It's me, Rupert J Piggit, and I [am hungersome.]need something crunchy to quiet my rumbly grumbletum.
+        
+            {Playthrough:
+                - 0: ++ (Run1)   {Playthrough == 0}["Why are you telling me this, Rupert J Piggit?"] 
+                    -> RupertWants
+                
+                - 1: ++ (Run2)   {Playthrough == 1}["Yes, yes Rupert. We know."]
+                    -> RupertWants
+                
+                - 2: ++ (Run3)   {Playthrough == 2}
+                    -> RupertWants
+                
+                - else: -> FuckUp.Playthroughs_TooMany
+                }
+            
+        -   (RupertWants) I was really hoping you would be a kindness and help me find something snacksome so I don't eat all of the Rabbit's lunchtime food.
+            Please will you help me get some munchings?
+
+        +   {Playthrough == 0} ["I suppose so."]
+                -> Rules
+        +   {Playthrough >= 1} ["Yes yes yes, let's get on with it."]
+                -> Start
+            
+    = Rules
+
+        -   (Rules_Start) You win this game by making sure the piglet gets something crunchy to munch upon.
+        
+        {Playthrough: 
+                - 0:    +   ["Bloody piglets. Alright, I understand."]
+                            -> Rules_End
+                - 1:    +   ["I'm aware."]
+                            -> Rules_End
+                - 2:    +   -> Silo.Placeholder
+                - else: -> FuckUp.Playthroughs_TooMany
+        }
+        
+        -   (Rules_End)
+            -> Start
+
+
+====== Tantrum
+
+    = BigBoots
+        -   OH SO WE FINK WE'RE TOO GOOD FOR A PICTURE OF PIGGITS, DO WE?
+        
+        +   ["..."]
+            # IMAGE: rabbitpiglet02.bmp
+        
+        -   WOT'S WRONG WITH PIGGIT PICS?    
+        
+        +   ["..."]
+            # IMAGE: rabbitpiglet03.jpg
+        
+        -   FINE YOU WON'T GET NO MORE PIGGIT PICCIES.
+                
+        + ["Thankyou."]
+            -> Start     
+
+    = VeryRudeIndeed
+        # IMAGE: rabbitpiglet01.jpg
+        
+        +   "Can we not[ do this please?"]-"
+            # IMAGE: rabbitpiglet02.bmp
+            
+            ++  "L[ook, I really am very sorry if I hurt your feelings, small piglet, but I have quite a lot to do."]-"
+                # IMAGE: rabbitpiglet03.jpg
+                
+                +++ ["ALRIGHT!!!!"]
+                    -> Intro.Curtain_Up
+
+
+====== LoopStart
+
+	-   Well, I suppose we should get this pig fed.
+	
+	*   ["I'll try again but let's skip all that instructional nonsense and the picture of a piglet, please."] -> Tantrum.BigBoots
+
+	*   {Tantrum.BigBoots} ["Fine, but I swear to God Rupert, if you make me look at piglet pictures again I will lose my shit."]
+    	    
+    	    --  ...dat's not very kindsome.
+            ++  [Sorry.] 
+                -> Tantrum.VeryRudeIndeed
+                
+	*   {Tantrum.VeryRudeIndeed} Look, Rupert, I'd really like to help you get that cracker[. And whilst those piggit photos are really wonderful (too good for me, if anything), I worry that we might miss lunchtime.]-
+	    
+	    OKEY DOKEY LET'S GET SMOKEY!
+    
+    +   [Sigh and go again.]
+        
+    - -> Intro.Curtain_Up
