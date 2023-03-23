@@ -1,0 +1,39 @@
+=== Tasks_Now
+    = CSS
+        -   (CSS_Template) Create a basic CSS template for an initial visual build
+        
+        -   (Classes_SayTags) Make a list of tags that we might want to use, such as:
+            --      Apply #class: sayRabbit
+            --      Apply #class: sayPlayer
+            --      Apply #class: sayNarrator
+            --      Apply #class: sysScore
+            --      Apply #class: sysDebug
+
+        -   (Classes_Rules) Make basic rules for the classes above
+            TODO:   Define #class: sayRupert
+            --      Define #class: sayRabbit
+            --      Define #class: sayPlayer
+            --      Define #class: sayNarrator
+            --      Define #class: sysScore
+            --      Define #class: sysDebug
+        
+        -   (Classes_ChoiceTags) ?
+            
+        
+            -> DONE
+
+
+=== Tasks_Later
+    
+    -   (NewIdea_Constants) Figure out how to use Constants
+
+    -   (GungHo) Make sure this conversation topic gets used
+    
+    -   (Variable_ResultTrend) Tracks how the player is doing relative to previous attempts
+        --  //VAR ResultTrend = 0
+    -   (Variable_RabbitState) Do something with the rabbit variables. Create a VAR/List to track Rabbit states?
+        -> Start.SaveWorld
+    
+    -   (Write_Run4_Endings) Write some endings for Game 4
+
+        -> DONE

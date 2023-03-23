@@ -1,0 +1,41 @@
+====== Win
+    -   YOU WIN! You munched a cracker! //NP
+
+    -   The End //Meta
+
+    -   Many fanks for doing the playings, would you like to see what other ways this crunchy day could have gone? //RP
+
+    +   "That would be[ lovely, thankyou Rupert."]-" //PR
+        --  OH GOODY! //RP
+
+    +   "I'm a bit busy actu[ally, Rupert."]-" //PR
+        --  YIPPEE! AGAIN, AGAIN! //RP
+
+    -   He's gone. You should follow him or he'll just collar some other poor person and pretend he's not had a cracker. //NP
+
+        +   Sigh & Restart. //St
+            
+    -   Just to be clear, the game's over. You can go now. This will restart the entire thing, as if you'd never played it at all. //NP
+
+        +   I genuinely have nothing better to do. //PN
+            # RESTART
+
+    -   (Win_Run1) Dear Jason, please write some text for this section. It's called... //JP
+    -   Win.Win_Run1 //JP
+    -   It should differentiate winning on this run before showing the next bit of text, which is shown no matter how many runs the players took to win. //JP
+        
+        + [Oops] -> Win //PJ
+        
+    -   (Win_Run2) Dear Jason, please write some text for this section. It's called... //JP
+    -   Win.Win_Run2 //JP
+    -   It should differentiate winning on this run before showing the next bit of text, which is shown no matter how many runs the players took to win. //JP
+        
+        + [Oops] -> Win //PJ
+
+    -   (Win_Run3) Dear Jason, please write some text for this section. It's called... //JP
+    -   Win.Win_Run3 //JP
+    -   It should differentiate winning on this run before showing the next bit of text, which is shown no matter how many runs the players took to win. //JP
+        
+        + [Oops] -> Win //PJ
+
+    -   (The_End)   -> END //MP

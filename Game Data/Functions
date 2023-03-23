@@ -1,0 +1,181 @@
+=== function Set_EndAddress(Result1, Result2, Result3)
+    {DebugMode == true} Running the Set_EndAddress function. Currently EndAddress is {EndAddress}
+    
+    ~ EndAddress = oxx + xox + xxo
+    
+    {DebugMode == true} Closing the Set_EndAddress function. Currently EndAddress is {EndAddress}
+    
+
+=== function ChangeValue(change, to)
+    ~ change = to
+
+=== function ScoreSetter(RunNum, RunScore)
+    {RunNum:
+        -1: ~ Score1 = RunScore
+        -2: ~ Score2 = RunScore
+        -3: ~ Score3 = RunScore
+        }
+
+=== function ScoreExplain
+    Alright, so on this run you scored {LIST_VALUE(ScoreNow)}. 
+    
+    This means that you <>
+        
+    {ScoreNow:
+        - missed: didn't see anything that could satisfy the piglet's hunger.
+        - seen: saw a Ritz cracker, but didn't manage to get hold of it.
+        - got: managed to get hold of a Ritz cracker, but didn't actually eat it.
+        - munched: at the cracker and, therefore, have won the game.
+        - else: haven't played the game yet, have you?
+    }
+
+=== function RunReset
+                {DebugMode == true: 
+                    • Seen Tracking •
+                        SeenEver is {SeenEver}
+                        SeenNow is {SeenNow}
+                        SeenCount is {SeenCount}
+
+                    • Got Tracking •
+                        GotEver is {GotEver}
+                        GotNow is {GotNow}
+                        GotCount is {GotCount}
+                        Reason_Now_NoMunch is {Reason_Now_NoMunch == "": empty|{Reason_Now_NoMunch}}
+                    
+                    • Munch Tracking •
+                        MunchEver is {MunchEver}
+                        MunchNow is {MunchNow}
+                        MunchCount is {MunchCount}
+                
+                    • Score Tracking •
+                        ScoreNow is {ScoreNow}
+                    
+                    ••• Running •••
+                    }
+    
+    ~ SeenNow = false
+    ~ GotNow = false
+    ~ MunchNow = false
+    ~ ScoreNow = none
+    ~ Reason_Now_NoMunch = ""
+                
+                {DebugMode == true:
+                    SeenEver is {SeenEver}
+                    SeenNow is {SeenNow}
+                    SeenCount is {SeenCount}
+                    
+                    GotEver is {GotEver}
+                    GotNow is {GotNow}
+                    GotCount is {GotCount}
+                    Reason_Now_NoMunch is {Reason_Now_NoMunch == "": empty|{Reason_Now_NoMunch}}
+                    
+                    MunchEver is {MunchEver}
+                    MunchNow is {MunchNow}
+                    MunchCount is {MunchCount}
+                    
+                    ScoreNow is {ScoreNow}
+                    
+                    ••• Concluding •••
+                    }
+
+=== function CrackerTracker_See
+                {DebugMode == true: 
+                    ••• Starting CrackerTracker_See... NOW! •••
+                        Values prior to running function:
+                        
+                        SeenEver is {SeenEver}
+                        SeenNow is {SeenNow}
+                        SeenCount is {SeenCount}
+                        ScoreNow is {ScoreNow}
+                    
+                    ••• Running CrackerTracker_See... NOW! ••• 
+                    }
+        
+    ~ SeenEver = true
+    ~ SeenNow = true
+    ~ SeenCount ++
+    ~ ScoreNow = seen
+    
+                {DebugMode == true: 
+                    Values after running function:
+                        
+                        SeenEver: {SeenEver}
+                        SeenNow: {SeenNow}
+                        SeenCount: {SeenCount}
+                        ScoreNow is {ScoreNow}
+                    
+                    ••• Concluding CrackerTracker_See •••
+                    }
+
+=== function CrackerTracker_Get
+                {DebugMode == true: 
+                    ••• CrackerTracker_Get •••
+                    Values prior to running function:
+                        
+                        GotEver is {GotEver}
+                        GotNow is {GotNow}
+                        GotCount is {GotCount}
+                        ScoreNow is {ScoreNow}
+                    
+                    ••• Running •••
+                    }
+    
+    {GotEver == false: {~ GotEver = true}}
+    ~ GotNow = true
+    ~ GotCount ++
+    ~ ScoreNow = got
+
+                {DebugMode == true: 
+                    Values after running function:
+                    
+                        GotEver is {GotEver}
+                        GotNow is {GotNow}
+                        GotCount is {GotCount}
+                        ScoreNow is {ScoreNow}
+                    
+                    ••• Concluding •••
+                    }
+
+=== function CrackerTracker_Munch
+    //Developer Commentary: Start
+    {DebugMode == true: 
+        ••• Initiating CrackerTracker_Munch •••
+            Values prior to running function:
+                MunchEver is {MunchEver}
+                MunchNow is {MunchNow}
+                MunchCount is {MunchCount}
+                ScoreNow is {ScoreNow}
+        ••• Running CrackerTracker_Munch •••
+    }
+    
+    ~ MunchEver = true
+    ~ MunchNow = true
+    ~ MunchCount ++
+    ~ ScoreNow = munched
+    
+    //Developer Commentary: End
+    {DebugMode == true: 
+        ••• Concluding CrackerTracker_Munch •••
+            Values after running CrackerTracker_Munch:
+                MunchEver is {MunchEver}
+                MunchNow is {MunchNow}
+                MunchCount is {MunchCount}
+                ScoreNow is {ScoreNow}
+        ••• Closing CrackerTracker_Munch •••
+    }
+
+=== function getRandom()
+    //Assigning a Random Value to a Variable
+
+    {shuffle:
+        - ~ return "a Nobbly Bobbly"
+        - ~ return "Rupert's yellow wellies"
+        - ~ return "toots for days"
+        }
+        
+    /*
+        -   Example Usage
+                VAR x = ""
+                ~ x = getRandom()
+        -   I must remember that I have {x}! It's {x}!
+    */

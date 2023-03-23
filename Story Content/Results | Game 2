@@ -1,0 +1,96 @@
+====== Game2
+    -   (2Missed_Check1)
+            {Score1:
+                Missed: -> Result_11X
+                Seen: -> Result_21X
+                Got: -> Result_31X
+            }         
+    -   (2Seen_Check1)
+            {Score1:
+                Missed: -> Result_12X
+                Seen: -> Result_22X
+                Got: -> Result_32X
+            }
+    -   (2Got_Check1)
+            {Score1:
+                Missed: -> Result_13X
+                Seen: -> Result_23X
+                Got: -> Result_33X
+            }
+    
+    -   /* Result_1XX
+                        How very lazy, not even spotting the cracker that was there for the munchings. //NP
+
+                        With behaviour like this, you'll never be the plumpest hog in the trough. //NP
+                        */
+    -   (Result_11X) //Miss Miss
+                        That is twice in a row that you have not seen the cracker lying on the floor. //NP
+                        
+                        And frankly that is unacceptapig. //NP
+                            -> LoopStart            
+    -   (Result_12X) //Miss See
+                        YOU LOSE! //NP
+                        
+                        You did not even hold that lovely cracker that you saw between your trotters, let alone munch it. //NP
+                            -> LoopStart
+    -   (Result_13X) //Miss Get
+                        Meanwhile, I looked at the cracker. //NP
+                        
+                        SO CLOSE! You had a cracker this time, but you did not munch it. //NP
+                            -> LoopStart
+    -   /* Result_2X
+                        YOU LOSE! //NP
+                        You did not even hold that lovely cracker that you saw between your trotters, let alone munch it. //NP
+                        */
+    -   (Result_21X) //See Miss
+                        Last time, you at least saw the cracker. //NP
+                        
+                        This time, not even that. //NP
+                        
+                        Shameful. //NP
+                        
+                        Shameful. //NP
+                            -> LoopStart
+    -   (Result_22X) //See See
+                        The cracker isn't going to hurt you. //NP
+                        
+                        Don't just look at it, get it! //NP
+                        
+                        Munch it! //NP
+                            -> LoopStart
+    -   (Result_23X) //See Get
+                        This is a definite improvement. //NP
+                        
+                        You have now actually held that lovely cracker in your worthy trots. //NP
+                        
+                        Now. To the munchy face. One last final push. //NP
+                            -> LoopStart
+    -   /* Result_3XX
+        Meanwhile, I looked at the cracker.
+        YOU LOSE! 
+        You had a cracker but you did not munch it.*/
+    -   (Result_31X) //Get Miss
+                        What happened? //NP
+                        
+                        Did you forget how to pick things up? //NP
+                        
+                        How careless. //NP
+                            -> LoopStart
+    -   (Result_32X) //Get Miss
+                        Right, you actually did worse this time. //NP
+                        
+                        You went from holding a cracker (but not eating it) to struggling with the very concept of holding a cracker. //NP
+                            -> LoopStart
+    -   (Result_33X)  //Get Miss
+                        Meanwhile, I looked at the cracker. //NP
+                        
+                        Right, I just want to check... //NP
+                        
+                        You know you need to eat the cracker, right? //NP
+                        
+                        Like, actually eat it. //NP
+                        
+                        Not just hold it. //NP
+                            -> LoopStart
+    
+        -> DONE

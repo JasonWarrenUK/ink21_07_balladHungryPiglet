@@ -1,0 +1,48 @@
+=== InitiateVariables
+    
+    LIST Score = none, missed, seen, got, munched
+    
+    LIST PlaythroughName = unplayed, first, second, third
+    
+    LIST Reasons_NoMunch = Ignorant, Fearful, Respectful
+    
+    //Dev States
+        VAR DebugMode = false
+        VAR Boomerang = false
+        VAR IHavePlayed = false
+    
+    //Run States
+        VAR Playthrough = 0 //Current Run
+            
+        VAR EndAddress = "000"
+            VAR oxx = "0"
+            VAR xox = "0"
+            VAR xxo = "0"
+            
+        VAR EndAddress_Valid = false
+            
+        VAR Score1 = none //Score for Run 1
+        VAR Score2 = none //Score for Run 2
+        VAR Score3 = none //Score for Run 3
+        VAR ScoreNow = none //Current run
+    
+    //Cracker States
+        VAR SeenEver = false //Seen the cracker ever?
+        VAR SeenNow = false //Seen the cracker now?
+        VAR SeenCount = 0 //Runs in which you've Seen the cracker?
+        
+        VAR GotEver = false //Got the cracker ever?
+        VAR GotNow = false //Got the cracker now?
+        VAR GotCount = 0 //Runs in which you've Got the cracker?
+
+        VAR MunchEver = false //Munched the cracker ever?
+        VAR MunchNow = false //Munched the cracker now?
+        VAR MunchCount = 0 //Runs in which you've munched?
+            
+    //Piglet States
+        VAR Reason_Now_NoMunch = "" //Reason you didn't Munch
+
+    //World States
+        VAR Conversation = "None" //Current topic
+    
+        ->->

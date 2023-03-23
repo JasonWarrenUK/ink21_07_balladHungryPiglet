@@ -1,0 +1,149 @@
+//Example: turning numbers into words
+//The following example is long, but appears in pretty much every inkle game to date. (Recall that a hyphenated line inside multiline curly braces indicates either "a condition to test" or, if the curly brace began with a variable, "a value to compare against".)
+
+=== function print_num(x) ===
+    { 
+        - x >= 1000:
+            {print_num(x / 1000)} thousand { x mod 1000 > 0:{print_num(x mod 1000)}}
+        - x >= 100:
+            {print_num(x / 100)} hundred { x mod 100 > 0:and {print_num(x mod 100)}}
+        - x == 0:
+            zero
+        - else:
+            { x >= 20:
+                { x / 10:
+                    - 2: twenty
+                    - 3: thirty
+                    - 4: forty
+                    - 5: fifty
+                    - 6: sixty
+                    - 7: seventy
+                    - 8: eighty
+                    - 9: ninety
+                }
+                { x mod 10 > 0:<>-<>}
+            }
+            { x < 10 || x > 20:
+                { x mod 10:
+                    - 1: one
+                    - 2: two
+                    - 3: three
+                    - 4: four        
+                    - 5: five
+                    - 6: six
+                    - 7: seven
+                    - 8: eight
+                    - 9: nine
+                }
+            - else:     
+                { x:
+                    - 10: ten
+                    - 11: eleven       
+                    - 12: twelve
+                    - 13: thirteen
+                    - 14: fourteen
+                    - 15: fifteen
+                    - 16: sixteen      
+                    - 17: seventeen
+                    - 18: eighteen
+                    - 19: nineteen
+                }
+            }
+    }
+    // which enables us to write things like:
+
+=== Example_Print_Num
+    ~   temp price =    0
+    ~   price =         15
+    
+    -   I pulled out {print_num(price)} coins from my pocket and slowly counted them. 
+    -   "Oh, never mind," the trader replied. "I'll take half." And she took {print_num(price / 2)}, and pushed the rest back over to me.
+        
+        -> DONE
+
+=== Variables_TheIntercept
+    //Copied from The Intercept
+
+    // Character_variables
+        - We track just two, using a +/- scale
+        
+        VAR forceful = 0
+        VAR evasive = 0
+
+    // Inventory_Items
+        
+        VAR teacup = false
+        VAR gotcomponent = false
+
+    // Story_States 
+        - Tracking Methods: 
+            * read counts of knots
+            * functions that collect up more complex logic
+            * variables
+        
+        VAR drugged = false
+        VAR hooper_mentioned = false
+        VAR losttemper = false
+        VAR admitblackmail = false
+
+    // What kind of clue did we pass to Hooper?
+        
+        CONST NONE = 0
+        CONST STRAIGHT = 1
+        CONST CHESS = 2
+        CONST CROSSWORD = 3
+        VAR hooperClueType = NONE
+
+        VAR hooperConfessed = false
+
+        CONST SHOE = 1
+        CONST BUCKET = 2
+        VAR smashingWindowItem = NONE
+
+        VAR notraitor = false
+        VAR revealedhooperasculprit = false
+        VAR smashedglass = false
+        VAR muddyshoes = false
+
+        VAR framedhooper = false
+
+    // What did you do with the component?
+        
+        VAR putcomponentintent = false
+        VAR throwncomponentaway = false
+        VAR piecereturned = false
+        VAR longgrasshooperframe = false
+
+    // DEBUG mode
+        - Adds a few shortcuts - remember to set to false in release!
+        
+        VAR DEBUG = false
+            {DEBUG:
+                IN DEBUG MODE!
+                *   [Beginning...]  -> start
+                *   [Framing Hooper...] -> claim_hooper_took_component
+                *   [In with Hooper...] -> inside_hoopers_hut
+            - else:
+                // First diversion: where do we begin?
+             -> start
+            }
+
+    Wrap up character movement using functions
+        - In case we want to develop this logic in future
+            -> DONE
+        
+=== function lower(ref x)
+    ~ x = x - 1
+
+=== function raise(ref x)
+    ~ x = x + 1
+        
+//Divert_Destinations
+    === start
+        -> DONE
+
+    === claim_hooper_took_component
+        -> DONE
+            
+    === inside_hoopers_hut
+        -> DONE

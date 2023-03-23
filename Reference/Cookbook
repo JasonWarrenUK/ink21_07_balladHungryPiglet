@@ -1,0 +1,28 @@
+=== Cookbook
+    = Operators
+        //  ||                      Or
+        //  X + Y                   Add X to Y
+        //  X - Y                   Subtract Y from X
+        //  X * Y                   Multiply X by Y
+        //  X / Y                   Divide X by Y
+        //  X % Y (or X MOD Y)      Remainder of X / Y
+        //  POW(X, Y)               X to the power of Y
+        //  RANDOM(X, Y)            Random number from X (min) to y (max)
+
+            -> DONE
+        
+    = Phrases_Etc
+        //  xxxxx # xxxxx           (Game text, then tag)
+        //  * -> Target_Address     (Fallback, No Text)
+        //  * ->                    (Fallback, Text)
+        //  "Text to display" -> Target_Address     
+
+            -> DONE
+        
+    = Alternative_Text
+        //  {Thing 1|Thing 2}                     (Sequence)
+        //  {&Thing 1|Thing 2}                    (Cycle)
+        //  {!Thing 1|Thing 2}                    (Limited)
+        //  {~Thing 1|Thing 2}                    (Shuffle)
+    
+            -> DONE

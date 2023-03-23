@@ -1,0 +1,88 @@
+=== Silo
+    = Placeholder
+        -   This is a placeholder for a section that isn't written.
+        -   The game will now divert you to Inter_BeginLoop, ready to start another run.
+        -   The game might break during this run, depending on where you were before hitting this placeholder.
+            -> LoopStart
+    
+=== Backstage
+    = Result_000
+        -   Fake ending that exists to give the EndAddress variable an initial value
+            -> DONE
+        
+    
+=== FuckUp
+    = CheatWin
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: FuckUp.CheatWin 
+            -> END
+                
+    = Misc
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: FuckUp.Misc
+        -   WE ARE SORRY TO ANNOUNCE THAT THIS GREAT WESTERN RAIL SERVICE TO A COHERENT STORY HAS BEEN DIVERTED TO NONSENSE TOWN.
+        -   If you see this screen, I've fucked up the coding.
+        -   The End, motherfucker.
+           -> END
+               
+    = Run2
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: FuckUp.Run2
+            -> END
+                
+    = Run3
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: FuckUp.Run3
+            -> END
+                
+    = Playthroughs_TooMany
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: FuckUp.Playthroughs_TooMany
+        -   You've apparently completed the game more than the expected maximum.
+        -   You have completed –{Playthrough}– runs
+            -> END
+   
+   
+====== UhOh
+    = FunctionResult
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: UhOh.FunctionResult
+        -   You've been directed to an ending that should only exist as the initial value of a temporary variable inside a function.
+        -   The game will now divert you to Inter_BeginLoop, ready to start another run.
+        -   The game might break during this run, depending on where you were before hitting this placeholder.
+            -> LoopStart
+        
+    = EndWithoutEnd1 
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: UhOh.EndWithoutEnd1
+        -   You've somehow made it into the Game 1 Sorter whilst having a current score of "None".
+        -   The game will now divert you to Inter_BeginLoop, ready to start another run.
+        -   The game might break during this run, depending on where you were before hitting this placeholder.
+            -> LoopStart
+                
+    = EndWithoutEnd2
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: UhOh.EndWithoutEnd2
+        -   You've somehow made it into the Game 2 Sorter whilst having a current score of "None".
+        -   The game will now divert you to Inter_BeginLoop, ready to start another run.
+        -   The game might break during this run, depending on where you were before hitting this placeholder.
+            -> LoopStart
+        
+    = EndWithoutEnd3
+        -   BEEP-BEEP-BOOP, I AM AN ERROR CODE: UhOh.EndWithoutEnd3
+        -   You've somehow made it into the Game 3 Sorter whilst having a current score of "None".
+        -   The game will now divert you to Inter_BeginLoop, ready to start another run.
+        -   The game might break during this run, depending on where you were before hitting this placeholder.
+            -> LoopStart
+            
+/*  
+    Flows for the Random Conversation
+        NotSeen_RunAll ("Tail")
+            NotSeen_Run2_A ("Swivel 1")
+                Seen_Show1st ("Swivel 2")
+                Seen_Run3 ("Null")
+            NotSeen_Run2_B ("SnootBoop")
+                NotSeen_Run3_A ("Backstroke")
+                NotSeen_Run3_B ("Zen")
+        NotSeen_Run1 ("Tail")
+            Seen_Run2 ("Null")
+                Seen_Show1st ("Swivel 1")
+                Seen_Run3 ("Null" [2nd Time])
+            Seen_Show1st ("Swivel 1")
+                Seen_Show2nd ("TableIsBroken")
+                Seen_Run3 ("Null")
+*/
+
+

@@ -1,0 +1,212 @@
+=== Select_Mode
+    -> Select_Mode_Menu
+    
+    = Select_Mode_Menu
+        #CLEAR
+        -   \∆---[ Mode Selection ]---∆
+            
+            +   (I_Am_Harriet) [Showcase Mode]
+                
+                --  Hello Rabbit. Right this way, thankyou.
+                    
+                    ++  [...]
+                        ~ DebugMode = false
+                        -> HarrietIntro
+                        
+                    
+                    
+            +   (I_Am_Player) [Player Mode]
+                
+                --  The current game, without the jagged bits hidden.
+                    You will experience the story as if you were a player. All code and logic will be hidden. 
+                    Confirm this choice?
+                    
+                    ++  [Yes]
+                        ~ DebugMode = false
+                        -> Select_Mode_Chosen
+                    ++  [No] -> Select_Mode_Menu
+                
+                
+            +   (I_Am_Dev) [Developer Mode]
+    
+                --  HELLO RUPERT. PIG MODE ACTIVATED.
+                    ++  [Yay!] 
+                        ~ DebugMode = true
+                        -> Select_Mode_Chosen
+                    ++  [No] -> Select_Mode_Menu
+                    
+        
+        
+    
+    = Select_Mode_Chosen
+        #CLEAR
+        ->->
+
+
+=== Variable_Returner
+    -   Un-fucking-implemented, as you well know. //JP
+    -   Come back when you've written this section of code. //JP
+    
+    +   Sowwy //PJ
+            ->->
+            
+=== DevMenu
+    -> Select_Dev
+    
+=== Select_Dev
+    -   What the fuck you want?
+        +   [Play the game]
+            -> Select_Playing
+        +   [Set my playthroughs]
+            -> Select_Playthrough
+        +   [Jump somewhere in the story]
+            -> Select_Chapter
+        +   [Test a specific ending]
+            -> Select_Ending
+        +   {IHavePlayed == true} [Go back to where I was]
+            ->->
+        
+        
+=== Select_Playing
+    -   Where from?
+        +   {IHavePlayed == false} Including the title sequence
+            ->->
+        +   {not Select_Chapter}{not Select_Playthrough} Skip the title sequence
+            -> Intro
+        +   \[ <————« \]
+            -> Select_Dev
+
+
+=== Select_Playthrough
+    ~ temp thing = "Playthrough"
+    ~ temp value = 0
+    -   Which playthrough do you want to set yourself on?
+        
+        +   1
+            ~ value = 1
+        +   2
+            ~ value = 2
+        +   3
+            ~ value = 3
+
+    -   {ChangeValue(thing, value)}
+    
+    -   Results: 
+        --  {thing} is {value}.
+        --  Playthrough is {value}.
+        --  Playthrough is {Playthrough}. 
+        
+    -   If these aren't the same, code's gone wrong.
+        
+        +   Change playthrough again
+            -> Select_Playthrough
+        +   Back to the Developer Menu
+            -> Select_Dev
+    
+=== Select_Score
+    ~ temp thing = ""
+    ~ temp value = 0
+    
+    -   Which score do you want to set?
+        +   Score1
+            ~   thing =  "Score1"
+        +   Score2
+            ~   thing =  "Score2"
+        +   Score3
+            ~   thing =  "Score3"
+        +   ScoreNow (The score for the current run)
+            ~   thing =  "ScoreNow"
+            
+    -   And what value do you want that score to have?
+        +   Missed
+            ~   value =  0
+        +   Seen
+            ~   value =  1
+        +   Got
+            ~   value =  2
+        +   Munched
+            ~   value =  3
+            
+    -   {ChangeValue(thing, value)}
+    -   Okay, so {thing} is now {value}.
+    
+        -> Select_Dev
+    
+    
+=== Select_Chapter
+    -   {
+            - Playthrough == 0: 
+                ~ Playthrough ++
+        }
+    
+    -   Where do you want to play from? //MP
+        +   {IHavePlayed == true}Just carry on from where I was
+            ->->
+        +   The titles
+            -> Opening_Text
+        +   The introduction
+            -> Intro
+        +   Beginning of the playthrough
+            -> Start.BeginPlaythrough
+        +   Finding the cracker & the randomised conversation
+            -> Start.SaveWorld
+        +   Getting the cracker
+            -> Middle
+        +   Eating the cracker
+            -> Ending
+        +   The run sorter
+            -> RunSorter
+            
+            
+=== Select_Ending
+    -   {EndAddress_Valid == true: Current ending is {EndAddress}}
+        -> Select_Ending_Menu
+    
+    = Select_Ending_Menu
+        -   Select an option
+            +   [Go to that ending] #CLEAR
+                -> ResultSorter
+            +   [Select result for Game 1] #CLEAR
+                -> Select_Result1
+            +   [Select result for Game 2] #CLEAR
+                -> Select_Result2
+            +   [Select result for Game 3] #CLEAR
+                -> Select_Result3
+        
+
+    = Select_Result1
+        -   Okay, what was the Game 1 score?
+            +   1 
+                ~ oxx = "1"
+            +   2 
+                ~ oxx = "2"
+            +   3
+                ~ oxx = "3"
+        
+        -   {Set_EndAddress (oxx, xox, xxo)}    
+            -> Select_Ending
+    
+    = Select_Result2
+        +   1 
+            ~ xox = "1"
+        +   2 
+            ~ xox = "2"
+        +   3
+            ~ xox = "3"
+            
+        -   {Set_EndAddress (oxx, xox, xxo)}
+            -> Select_Ending
+    
+    = Select_Result3
+        +   1 
+            ~ xxo = "1"
+        +   2 
+            ~ xxo = "2"
+        +   3
+            ~ xxo = "3"
+            
+        -   {Set_EndAddress (oxx, xox, xxo)} 
+            -> Select_Ending
+ 
+    
+    -> DONE

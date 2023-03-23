@@ -1,0 +1,219 @@
+=== Endgame_Message
+
+    = Result_100 
+        -   How very lazy, not even spotting the cracker that was there for the munchings. 
+        -   With behaviour like this, you'll never be the plumpest hog in the trough.
+                -> LoopStart
+            
+    = Result_110
+        -   That is twice in a row that you have not seen the cracker lying on the floor. 
+        -   And frankly that is unacceptapig.
+                -> LoopStart
+                
+    = Result_111
+        -   Look, here's the thing. I'm not even certain it's possible to see this ending. To see this, you need to have...
+            +      played three times
+            ++     getting the worst possible result 
+            +++    on every playthrough.
+        -   And this is in a game where some of the bad choices disappear once you've picked them.
+            +   I mean[...], in some ways this is an achievement.
+            ++  [...] Yes. An achievement.
+        -   Tell you what, this is painful. 
+            +   Let's say you won[...] in your own special way.
+            ++   THE END
+                -> END
+            
+    = Result_112 
+        -   Okay.
+            +   So...
+        -   I don't want you to feel bad, but by this point in the game you could be seeing one of twenty-one different endings.
+            +   Do you know where this one ranks? 
+        -   Twentieth. This could only have been worse if you didn't even see the cracker this time.
+            One more time: 
+            +   YOU NEED 
+            ++  TO PICK UP
+            +++ THE CRACKER
+                -> LoopStart
+            
+    = Result_113 
+        -   Okay, so we appear to have chiselled a crack into the boulder that is your brain.
+            +   You have now[...] held the cracker.
+            ++  It's possible[...], with supreme effort, that this next attempt will see you overcome the greatest test.
+        -   I refer, of course, to popping the dastardly biccie into your gob.
+                -> LoopStart
+                
+    = Result_120 
+        -   You spotted the cracker this time, but did not snag it with your grabby trots.
+                -> LoopStart
+                    
+    = Result_121
+        -   Well, I'm not really certain how to help.
+        -   Pick up the cracker, please. Pick. It up.
+            -> LoopStart
+                    
+    = Result_122
+        -   It's a little early to rest on your laurels and revisit past glories. 
+            +   I know we're very proud that we managed to see the cracker on the second attempt[.], but repeating that achievement is, perhaps, a trifle unambitious.
+        -   -> LoopStart
+                    
+    = Result_123
+        -   Little by little, we're doing better.
+        -   This might help motivate you; you're progressing as slowly as is possible, other than not making progress at all.
+        -   Maybe we could... get a bit of a trot on?
+                -> LoopStart
+        
+    = Result_130
+        -   You held the cracker this time, but you did not munch it.
+        -   How frustrating.
+                -> LoopStart
+                
+    = Result_131
+        -   No, don't get disheartened! The appropriate response to hardship is to go harder! Pick up the cracker WITH YOUR FACE!
+            -> LoopStart
+                    
+    = Result_132
+        -   Well. What a pickle we find ourselves in. You didn't pick it up this time. Sigh.
+                -> LoopStart
+                    
+    = Result_133
+        -   No. You see, you've gotten complacent. You can't just repeatedly hold the cracker, you have to eat it.
+        -   You know, eating. It's like holding it with your mouth?
+                -> LoopStart
+    
+        
+    = Result_200
+        -   You did not even hold that lovely cracker that you saw between your trotters, let alone munch it.
+                -> LoopStart
+                
+    = Result_210
+        -   Last time, you at least saw the cracker. 
+        -   This time, not even that. 
+        -   Shameful. 
+        -   Shameful.
+            -> LoopStart
+        
+    = Result_211
+        -   The cracker's under the table. Just in case you've forgotten.
+            -> LoopStart
+                    
+    = Result_212
+        -   You now have a firm grasp of where the cracker is, but not yet a firm grasp of the cracker.
+            -> LoopStart
+                    
+    = Result_213
+        -   SO CLOSE! EAT THE CRACKER, PIG!
+            -> LoopStart
+                
+    = Result_220
+        -   The cracker isn't going to hurt you. Don't just look at it! Get it! Munch it!
+                -> LoopStart
+            
+    = Result_221
+        -   Well this is all very disappointing.
+                -> LoopStart
+                    
+    = Result_222
+        -   You're just LOOKING. 
+        -   Over and over, look look look. 
+        -   PICK UP THE CRACKER.
+                -> LoopStart
+                
+    = Result_223
+        -   WE'RE NEARLY THERE. YOU HELD THE CRACKER.
+        -   IT WAS THERE IN YOUR TROTTER. 
+        -   I BELIEVE IN YOU.
+                -> LoopStart
+        
+    = Result_230
+        -   This is a definite improvement. 
+        -   You have now actually held that lovely cracker in your worthy trots. 
+        -   Now. 
+        -   From the grabby trot to the munchy face. 
+        -   One last final push.
+                -> LoopStart
+        
+    = Result_231
+        -   I said "one last final push", not "just sit around, scratch your botty and toot a bit"!
+                -> LoopStart
+                    
+    = Result_232
+        -   You were doing so well! 
+        -   After an initial failure, you managed to hold a cracker... and now, you've gone back to not holding a cracker. 
+        -   Shall we try again?
+                -> LoopStart
+                    
+    = Result_233
+        -   Okay, you're... getting there. Sort of. 
+        -   After an inauspicious start, you've now managed the very difficult task of holding a savoury snack twice. 
+        -   I think that, if you try really hard, you can get it from the trotter to the mouth. 
+        -   I believe in you.
+                -> LoopStart
+    
+    = Result_300
+        -   You had a cracker but you did not munch it. 
+        -   Why, piglet? 
+        -   Why?
+                -> LoopStart
+            
+    = Result_310
+        -   What happened?
+        -   Did you forget how to pick things up? 
+        -   How careless.
+                -> LoopStart
+                
+    = Result_311
+        -   You're still not picking it up! Don't let the big bad cracker scare you!
+                -> LoopStart
+                    
+    = Result_312
+        -   You saw the cracker again. I think that you can eat it, if you really try very hard.
+                -> LoopStart
+                    
+    = Result_313
+        -   Right, you're back on it. You picked it up in your trotters again. Well done!
+                -> LoopStart
+                
+    = Result_320
+        -   You went from holding a cracker (but not eating it) to struggling with the very concept of holding a cracker.
+        -   Are you alright?
+        -   Should I call someone?
+                -> LoopStart
+                
+    = Result_321
+        -   It just gets worse and worse every time. It's very sad.
+                -> LoopStart
+                    
+    = Result_322
+        -   You had a strong start, followed by a persistent decline. You're New Labour.
+        -   FROM THE TOP!
+                -> LoopStart
+                    
+    = Result_323
+        -   Well, we're back on track, we've managed to hold the cracker again. 
+        -   Good for you. Now... this time, eat it please.
+                -> LoopStart
+                
+    = Result_330
+        -   I just want to check... 
+        -   Did I mention that you need to eat the cracker? 
+        -   Actually eat it? 
+        -   Not just hold it?
+                -> LoopStart
+                
+    = Result_331
+        -   What on EARTH was that nonsense?
+                -> LoopStart
+                    
+    = Result_332
+        -   Well you're not even trying now, are you?
+        -   Or are you so demoralised by failing to eat a cracker, twice, that now you can't even bring yourself to hold it?
+                -> LoopStart
+                    
+    = Result_333
+        -   I... I don't know how to help you. 
+        -   You've literally had a cracker in your trotter three times. 
+        -   THREE TIMES. 
+        -   Why aren't you eating it? It's the whole point of the... 
+        -   Just...
+        -   Let's try again.
+                -> LoopStart

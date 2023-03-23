@@ -1,0 +1,143 @@
+====== Intro
+    ~ IHavePlayed = true
+    -> Curtain_Up
+    
+    = Curtain_Up
+    
+        -   its me rupert j piggit n i {Playthrough == 0:am hungersome|need something crunchy to quiet my rumbly grumbletum} #class: sayRupert
+
+        +   (Run1) {Playthrough == 0} [Why are you telling me this, Rupert J Piggit?] //PR
+            -> RupertWants
+        +   (Run2) {Playthrough == 1} [Yes, yes Rupert. We know.] //PR
+            -> RupertWants
+        +   (Run3) {Playthrough == 2} [Rupert, I understand.] //PR
+            -> A_Bit_Much ->
+            -> Please_Help_A
+            
+        -   (RupertWants) i was realy hopin you wud be a <> #class: sayRupert
+            --  {~big|crumbly|snuggly} <> 
+                    #class: sayRupert
+            --  {~kindness|wonderflump|poppinfresh} <> 
+                    #class: sayRupert
+            --  n help me <> #class: sayRupert
+            --  {~out wiv|get hold of|to snaffle} <> 
+                    #class: sayRupert
+            --  {~the best|a crunching|some smackeroo of} <> 
+                    #class: sayRupert
+            --  {~snacker|nums|deliciousness} <> 
+                    #class: sayRupert
+            --  {Playthrough == 0: so i don't eat all of the rabbits lunchtime food} 
+                    #class: sayRupert
+                {Playthrough == 0:-> Please_Help_Q|-> Please_Help_A}
+            
+        -   (Please_Help_Q) Please will you help me get some munchings? 
+                #class: sayRupert
+
+        -   (Please_Help_A)
+            + {Playthrough == 0} I suppose so.
+                -> Rules
+            + {Playthrough == 1} Yes yes yes, let's get on with it.
+                -> Rules
+            + {Playthrough == 2} I swear, good pig, that I am devoted to this quest.
+                -> Rules
+             //PR
+
+            
+    = Rules
+        #CLEAR
+    
+        -   (Rules_Start) You win this game by making sure the piglet gets something crunchy to munch upon. //NP
+        
+            + {Playthrough == 0} Typical piglets. Alright, I understand.
+            + {Playthrough == 1} I'm aware.
+            + {Playthrough == 2} Can we... just... get on with it please
+        
+        -   (Rules_End)
+            -> Start
+    
+    = A_Bit_Much
+        +   [Rupert. I understand. You're hungry.]
+        
+            ++  [Rupert. I understand. You have a hunger.]
+            
+                +++ [Rupert. I understand. You have a deep, terrible hunger.] 
+            
+                    ++++    [Rupert. I understand. You have a deep, terrible hunger, a hunger that must be satisfied.]
+                    
+                        +++++   [Rupert. I understand. You have a deep, terrible hunger, a hunger that can be sated only in the hot fires of shame that roar in the aftermath of indulgence]
+                        
+                            ++++++  [Rupert. I understand. You have a deep, terrible hunger, a hunger that can be sated only in the hot fires of shame that roar in the aftermath of indulgence; the warm glow that follows a biscuit.]
+                            
+                                +++++++ [Rupert. I understand. You have a deep, terrible hunger, a hunger that can be sated only in the hot fires of shame that roar in the aftermath of indulgence; the salty luminescence that comes only from attending to the golden cracker's siren call.]
+                                    #CLEAR
+                                    ->->
+
+====== Tantrum
+
+    = BigBoots
+        -   OH SO WE FINK WE'RE TOO GOOD FOR A PICTURE OF PIGGITS, DO WE? 
+                #class: sayRupert
+                #IMAGE: rabbitpiglet02.bmp
+        
+        +   "..." //PR
+        
+        -   WOT'S WRONG WITH PIGGIT PICS? 
+                #class: sayRupert
+                #IMAGE: rabbitpiglet03.jpg  
+        
+        +   "..." //PR
+        
+        -   FINE YOU WON'T GET NO MORE PIGGIT PICCIES. 
+                #class: sayRupert
+        
+        +   "Thankyou." //PR
+                -> Start     
+
+    = VeryRudeIndeed
+        -   # IMAGE: RabbitPiggit01.jpg
+        +   "Can we not[ do this please?"]-" //PR
+
+        -   # IMAGE: RabbitPiggit02.bmp    
+        +  "Look[, I really am very sorry if I hurt your feelings, small piglet, but I have quite a lot to do."]-" //PR
+        
+        -   # IMAGE: RabbitPiggit03.jpg        
+        +   "ALRIGHT THAT WILL DO." //PR
+            -> Intro.Curtain_Up
+
+=== LoopStart
+    -   Would you like to have your score explained? //NP
+        +   Yes //PN
+            {ScoreExplain()}
+        +   No //PN
+    
+	-   {Playthrough < 3: Shall we get this empty-bellied pinkness fed?|-> Playthrough_4} 
+    	*   "I'll try again but let's skip all that instructional nonsense and the picture of a piglet, please." //PR
+                -> Tantrum.BigBoots
+        
+        *   {Tantrum.BigBoots} "Fine. //PR
+            ++  But Rupert... //PR
+            --  
+            ++  I swear to God... //PR
+            --  
+            ++  If you make me look at piglet pictures again, I might lose my shit." //PR
+            --  ...dat's not very kindsome. 
+                    #class: sayRupert
+            ++  Sorry. //PR
+                -> Tantrum.VeryRudeIndeed
+
+    	*   {Tantrum.VeryRudeIndeed} Look, Rupert, I'd really like to help you get that cracker[ and, whilst those piggit photos are really wonderful (too good for me, if anything), I worry that we might miss lunchtime.]- //PR
+            --  OKEY DOKEY LET'S GET SMOKEY!
+                    #class: sayRupert
+        
+        +   Sigh and go again. //St
+        
+    -   
+
+    +   Begin -> Intro.Curtain_Up //Meta
+    
+=== Playthrough_4
+    I'm afraid that's all the playthroughs that I've coded so far. I didn't anticipate anyone needing more than three attempts in a game about a piglet trying to get a ritz cracker from underneath a coffee table, so... I don't know what to tell you.
+
+    THE END
+        
+        -> END

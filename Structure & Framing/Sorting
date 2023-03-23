@@ -1,0 +1,68 @@
+=== RunSorter
+    {Playthrough:
+        - 1: {ScoreSetter(1, ScoreNow)}
+        - 2: {ScoreSetter(2, ScoreNow)}
+        - 3: {ScoreSetter(3, ScoreNow)}
+    }
+    
+    -> DeclareResult ->
+    -> ResultSorter
+    
+
+=== DeclareResult
+    -   {ScoreNow == munched:The|An} End{ScoreNow == munched:.|ing...}
+    
+    -   And so, your
+        {Playthrough:
+            1:    <> first <>
+            2:    <> second <>
+            3:    <> third <>
+        }
+        attempt ends in {ScoreNow == munched: success|failure}.
+        
+        ->->
+
+=== ResultSorter
+    {EndAddress: 
+        - 100: -> Endgame_Message.Result_100
+        - 110: -> Endgame_Message.Result_110
+        - 111: -> Endgame_Message.Result_111
+        - 112: -> Endgame_Message.Result_112
+        - 113: -> Endgame_Message.Result_113
+        - 120: -> Endgame_Message.Result_120
+        - 121: -> Endgame_Message.Result_121
+        - 122: -> Endgame_Message.Result_122
+        - 123: -> Endgame_Message.Result_123
+        - 130: -> Endgame_Message.Result_130
+        - 131: -> Endgame_Message.Result_131
+        - 132: -> Endgame_Message.Result_132
+        - 133: -> Endgame_Message.Result_133
+        - 200: -> Endgame_Message.Result_200
+        - 210: -> Endgame_Message.Result_210 
+        - 211: -> Endgame_Message.Result_211
+        - 212: -> Endgame_Message.Result_212
+        - 213: -> Endgame_Message.Result_213
+        - 220: -> Endgame_Message.Result_220
+        - 221: -> Endgame_Message.Result_221
+        - 222: -> Endgame_Message.Result_222
+        - 223: -> Endgame_Message.Result_223
+        - 230: -> Endgame_Message.Result_230
+        - 231: -> Endgame_Message.Result_231
+        - 232: -> Endgame_Message.Result_232
+        - 233: -> Endgame_Message.Result_233
+        - 300: -> Endgame_Message.Result_300
+        - 310: -> Endgame_Message.Result_310 
+        - 311: -> Endgame_Message.Result_311
+        - 312: -> Endgame_Message.Result_312
+        - 313: -> Endgame_Message.Result_313
+        - 320: -> Endgame_Message.Result_320
+        - 321: -> Endgame_Message.Result_321
+        - 322: -> Endgame_Message.Result_322
+        - 323: -> Endgame_Message.Result_323
+        - 330: -> Endgame_Message.Result_330
+        - 331: -> Endgame_Message.Result_331
+        - 332: -> Endgame_Message.Result_332
+        - 333: -> Endgame_Message.Result_333
+    }
+    
+    -> DONE

@@ -1,0 +1,251 @@
+====== Game3
+    /*
+        -   (2Missed_Check1)    
+                {Score1:
+                    Missed: -> Result_11X
+                    Seen: -> Result_21X
+                    Got: -> Result_31X
+                }
+                
+        -   (2Seen_Check1)
+                {Score1:
+                    Missed: -> Result_12X
+                    Seen: -> Result_22X
+                    Got: -> Result_32X
+                }
+        -   (2Got_Check1)
+                {Score1:
+                    Missed: -> Result_13X
+                    Seen: -> Result_23X
+                    Got: -> Result_33X
+                } */
+
+     //ALL NP
+
+    -   (3Missed_Check2)
+            /*
+            {Score3:
+                -
+                -
+                -
+            }
+            */
+            
+    -   (3Seen_Check2)
+    -   (3Got_Check2)
+
+    
+        /*  (Result_11X)
+            That is twice in a row that you have not seen the cracker lying on the floor. And frankly that is unacceptapig.*/
+    
+        -   (Result_111) //Miss Miss Miss
+                            Look, here's the thing. 
+                            I'm not even certain it's possible to see this ending. 
+                            To see this, you need to have
+                            
+                            played three times, 
+                            getting the worst possible result 
+                            on every playthrough.
+                            
+                            And this is in a game where some of the bad choices disappear once you've picked them.
+                            
+                            I mean... in some ways this is an achievement.
+                            
+                            ...
+                            
+                            Yes.
+                            An achievement.
+                            
+                            Tell you what, this is painful. 
+                            Let's say you won... 
+                            in, 
+                            like... 
+                            your own special way.
+                                                    
+                            THE END
+                                -> END
+                                
+        -   (Result_112) //Miss Miss See
+                            So...
+                            I don't want you to feel bad, 
+                            but by this point in the game you could be seeing one of twenty-one different endings.
+                            Do you know where this one ranks? 
+                            Twentieth. 
+                            
+                            Twen
+                            ti
+                            eth.
+                            
+                            One more time: 
+                            you need. 
+                            To pick up. 
+                            The cracker.
+                                -> LoopStart
+                                
+        -   (Result_113) //Miss Miss Get
+                            Okay, so we appear to have chiselled a crack into the boulder that is your brain.
+                            
+                            You have now held the cracker.
+                            
+                            It's possible, with supreme effort, that this next attempt will see you overcome the greatest test.
+                            
+                            I refer, of course, to popping the dastardly biccie into your gob.
+                                -> LoopStart
+                            
+    /*Result_12X
+    YOU LOSE! You did not even hold that lovely cracker that you saw between your trotters, let alone munch it.*/
+    
+        -   (Result_121) //Miss See Miss
+                            Placeholder
+                                -> Silo.Placeholder
+                                
+        -   (Result_122) //Miss See See
+                            It's a little early to rest on your laurels and revisit past glories. 
+                            I know we're very proud that we managed to see the cracker on the second attempt, but repeating that achievement is, perhaps, a trifle unambitious.
+                                -> LoopStart
+    
+        -   (Result_123) //Miss See Get
+                            Little by little, we're doing better.
+                            
+                            This might help motivate you; you're progressing as slowly as is possible, other than not making progress at all.
+                            
+                            Maybe we could... get a bit of a trot on?
+                                -> LoopStart
+    /*Result_13X
+    Meanwhile, I looked at the cracker. SO CLOSE! You had a cracker this time, but you did not munch it.*/                        
+        -   (Result_131) //Miss Get Miss
+                            Placeholder
+                                -> Silo.Placeholder
+    
+        -   (Result_132) //Miss Get See
+                            Well. What a pickle we find ourselves in. You didn't pick it up this time. Sigh.
+                                -> LoopStart
+    
+        -   (Result_133) //Miss Get Get
+                            No, see you've gotten complacent. You can't just repeatedly hold the cracker, you have to eat it.
+                            
+                            You know. Eating. Like... holding it with your mouth?
+                                -> LoopStart
+    /*Result_21X
+    Last time you just saw the cracker. This time, not even that. Shameful Shameful.*/
+        
+        -   (Result_211) //See Miss Miss
+                            Placeholder
+                                ->Silo.Placeholder
+        
+        -   (Result_212) //See Miss See
+                            Placeholder
+                                ->Silo.Placeholder
+        
+        -   (Result_213) //See Miss Get
+                            Placeholder
+                                ->Silo.Placeholder
+                            
+    /*Result_22X
+    The cracker isn't going to hurt you. Don't just look at it, get it! Munch it!*/
+        
+        -   (Result_221) //See See Miss
+                            Placeholder
+                                -> Silo.Placeholder
+    
+        -   (Result_222) //See See See
+                            You're just LOOKING. Over and over, look look look. PICK UP THE CRACKER.
+                                -> LoopStart
+                                
+        -   (Result_223) //See See Get
+                            WE'RE NEARLY THERE. YOU HELD THE CRACKER. 
+                            IT WAS THERE IN YOUR TROTTER. 
+                            I BELIEVE IN YOU.
+                                -> LoopStart
+    /*Result_23X
+    This is a definite improvement. You have now actually held that lovely cracker in your worthy trots. Now. To the munchy face. One last final push.*/
+        
+        -   (Result_231) //See Get Miss
+                            Placeholder
+                                -> Silo.Placeholder
+                                
+        -   (Result_232) //See Get See
+                            Meanwhile, I looked at the cracker.
+                            
+                            You were doing so well! 
+                            
+                            After an initial failure, you managed to hold a cracker... and now, you've gone back to not holding a cracker. 
+                            
+                            Shall we try again?
+                                -> LoopStart
+                                
+        -   (Result_233) //See Get Get
+                            Meanwhile, I looked at the cracker.
+                            
+                            Okay, you're... getting there. Sort of. 
+                            
+                            After an inauspicious start, you've now managed the very difficult task of holding a savoury snack twice. 
+                            
+                            I think that, if you try really hard, you can get it from the trotter to the mouth. 
+                            
+                            I believe in you.
+                                -> LoopStart
+    /*Result_31X
+    What happened? Did you forget how to pick things up? How careless.*/
+    
+        -   (Result_311) //Get Miss Miss
+                            Placeholder
+                                -> Silo.Placeholder
+                                
+        -   (Result_312) //Get Miss See
+                            Placeholder
+                                -> Silo.Placeholder
+                                
+        -   (Result_313) //Get Miss Get
+                            Placeholder
+                                -> Silo.Placeholder
+    
+    /*Result_32X
+    Right, you actually did worse this time. You went from holding a cracker (but not eating it) to struggling with the very concept of holding a cracker.*/
+    
+        -   (Result_321) //Get See Miss
+                            Placeholder
+                                -> Silo.Placeholder
+        
+        -   (Result_322) //Get See See
+                            You had a strong start, followed by a persistent decline. You're New Labour.
+                            
+                            FROM THE TOP!
+                                -> LoopStart
+                                
+        -   (Result_323) //Get See Get 
+                            Well, we're back on track, we've managed to hold the cracker again. 
+                            
+                            Good for you. Now... this time, eat it please.
+                                -> LoopStart
+    
+    /*Result_33X
+    Meanwhile, I looked at the cracker. Right, I just want to check... You know you need to eat the cracker, right? Like, actually eat it. Not just hold it.*/
+        
+        -   (Result_331) //Get Get Miss
+                            Placeholder
+                                -> Silo.Placeholder
+        
+        -   (Result_332) //Get Get See
+                            Meanwhile, I looked at the cracker.
+                            
+                            Well you're not even trying now, are you? 
+                            
+                            Or are you so demoralised by failing to eat a cracker, twice, that now you can't even bring yourself to hold it?
+                                -> LoopStart
+                                
+        -   (Result_333) //Get Get Get
+                            Meanwhile, I looked at the cracker.
+                            
+                            I... I don't know how to help you. 
+                            
+                            You've literally had a cracker in your trotter three times. 
+                            
+                            THREE TIMES. 
+                            
+                            Why aren't you eating it? It's the whole point of the... 
+                            
+                            Just...
+                            
+                            Let's try again.
+                                -> LoopStart

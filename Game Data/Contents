@@ -1,0 +1,133 @@
+=== Contents_Shortcuts
+    -> Tasks_Now
+    -> Testbed
+    
+=== Contents_Dev
+    = Contents //This file
+    = Tasklist
+        -> Tasks_Now
+        -> Tasks_Later_CSS
+        -> Tasks_Later_Misc
+        -> Tasks_Inbox
+    = Testbed
+        -> Testbed
+        -> Debug_Choose
+        -> Test_Choose
+    = Ideas //Currently empty
+
+=== Contents_Story
+    = The_Ballad_of_the_Hungry_Piglet //Titles & Menu
+        -> Opening_Text
+        -> Title
+        -> Selections
+    = Part_0 //Intro & Loops
+        -> Intro
+            -> Intro.Curtain_Up
+            -> Intro.Rules
+        -> Tantrum
+            -> Tantrum.BigBoots
+            -> Tantrum.VeryRudeIndeed
+        -> LoopStart
+    = Part_1 //Start
+        -> Start
+            -> Start.BeginPlaythrough
+            -> Start.SaveWorld
+    = Part_2 //Middle
+        -> Middle
+        //
+    = Part_3 //End
+        -> Ending
+        //
+
+=== Contents_Endings
+    = Results_Game_1
+    = Results_Game_2
+    = Results_Game_3
+    = Results_Win
+
+=== Contents_Mechanical
+    = Sorting
+        -> RunSorter
+        -> Game1Sorter
+        -> Game2Sorter
+        -> Game3Sorter
+    = Functions
+        
+        -> ScoreSetter
+        -> ScoreExplain
+        -> RunReset
+        -> CrackerTracker_See
+        -> CrackerTracker_Get
+        -> CrackerTracker_Munch
+        -> Example_getRandom
+    = Variables
+        // Lists
+        // Developer
+        // Scores
+        // Metadata
+        // Cracker Tracker
+            // Seeing
+            // Getting
+            // Munching
+        // Piglet States
+    = Holding_Bays
+        -> Silo
+            -> Silo.Placeholder
+        -> FuckUp
+            -> FuckUp.CheatWin
+            -> FuckUp.Misc
+            -> FuckUp.Run2
+            -> FuckUp.Run3
+            -> FuckUp.Playthroughs_TooMany
+        -> UhOh
+            -> UhOh.NoEnding
+            -> UhOh.FunctionResult
+            -> UhOh.EndWithoutEnd1
+            -> UhOh.EndWithoutEnd2
+            -> UhOh.EndWithoutEnd3
+
+=== Contents_Reference
+    = Cookbook
+        -> Cookbook
+        -> Cookbook.Logical_Operators
+        -> Cookbook.Numerical_Operators
+        -> Cookbook.Phrases_Etc
+        -> Cookbook.Alternative_Text
+    = Lootbag
+        -> Variables_TheIntercept
+        // Functions
+            -> lower
+            -> raise
+        // Divert Destinations
+            -> start
+            -> claim_Hooper_took_component
+            -> inside_Hoopers_hut
+    = Reference
+        -> Breakdowns_of_Operations
+            -> Breakdowns_of_Operations.If_Else
+            -> Breakdowns_of_Operations.Switch_Guide
+        -> Switch_Example_With_Diverts
+        -> Logic_Order
+        -> Syntax_Order
+            -> Syntax_Order.Broad_Syntax
+            -> Syntax_Order.Granular_Syntax
+        -> Commands
+            -> Commands.Choices
+            -> Commands.Conditional_Choice
+            -> Commands.Alternative_Text_and_Sequences
+            -> Commands.Conditional_Text
+        -> Variables_Global
+            -> Variables_Global.Types
+            -> Variables_Global.Declaring
+            -> Variables_Global.Printing
+            -> Variables_Global.Modifying
+            -> Variables_Global.Testing
+        -> Weave_Reference
+            -> Weave_Reference.Marking
+            -> Weave_Reference.General_Behaviour
+            -> Weave_Reference.Moving_From_and_To
+            -> Weave_Reference.Addressing_Labels
+            -> Weave_Reference.Diverting_To_Labels
+        -> Game_Queries
+            -> Game_Queries.Choice_Counting
+            -> Game_Queries.String_Queries

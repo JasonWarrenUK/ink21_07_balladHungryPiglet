@@ -1,0 +1,50 @@
+====== Ending
+    # CLEAR 
+
+    -   rabbit carried on bein ver proud n she sed
+        #class: sayRupert
+        
+    -   I shall venture into the castle and put an end to Ganon's schemes!
+    
+        *   ["That truly is the most indomitable challenge once might expect to face on a Sunday afternoon!"]dats scawy
+            --  She huffed and miffed a bit and said something about how I wouldn't understand because my brain has joy con drift. //RP
+            --  S<> //RP
+                ->Poor_Deer
+
+        *   ["Such courage from such a diminuitive and, indeed, sensitive representative of the family Leporidae!"] you vewy brave
+            --  "Well I'm glad you finally noticed!" //RaR
+            --  S<>
+                ->Poor_Deer
+
+        +   {Playthrough < 3 && GotNow == true} [Munch the cracker.]
+            --  NUMNUMNUMNUMNUMNUM
+                #class: sayRupert
+            -- "You're a silly pig, Rupert."
+                -> Ritz_Munch
+
+        +   {Playthrough == 3 && GotNow == true} [Quietly munch the cracker]YESSSSS I GOT THE CRACKER PUT IT IN MY PIGGIT FACE I HAV WAITED TOO LONG
+            -- "Pardon?" //RaR
+                ++  ["Ah, please excuse me, I sometimes forget my manners."] nuffink
+                    -> Ritz_Munch
+
+        //this one's a bit of a backup choice, does it get used??
+        +   ->
+            i onistly dont no wat i sed next cos i was tootin happily but aparently it was not too bad cos s<>
+                #class: sayRupert
+                ->Poor_Deer
+
+    -   (Poor_Deer) <>he carrid on blowin up a deer
+            #class: sayRupert
+        
+        +   [{Playthrough == 1: But such a hunger was upon me; the heavy touch of Gluttony, the deadliest sin|But sadly, I was still famished.}] o poop
+                #class: sayRupert
+                -> RunSorter
+
+    -   (Ritz_Munch) i did a crunchcrunchcrunch n patted my porky belly
+            #class: sayRupert
+            {CrackerTracker_Munch()}
+    
+        +   Good, so if we could start br[inging this to a conclusion, that would be marvellous.]-
+            --  n posbly a little toot
+                #class: sayRupert
+            -> RunSorter

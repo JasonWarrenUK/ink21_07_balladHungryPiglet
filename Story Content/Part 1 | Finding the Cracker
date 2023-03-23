@@ -1,0 +1,264 @@
+====== Start
+    -> BeginPlaythrough
+
+    = BeginPlaythrough //Always come through here! 
+        {DebugMode == true: This is where the game increments the playthrough. Currently it's {Playthrough}}
+        
+        //Increment the Playthrough count by 1
+        ~ Playthrough ++
+        
+        {DebugMode == true: Now it's {Playthrough}}
+        
+        //Declare which run the player's on
+        +   Okay, time for your {Playthrough == 1:first} {Playthrough == 2:second}{Playthrough == 3:third} {~brave|spirited|desperate} {~attempt|try|struggle}. //NP
+        
+        -   Let's {SeenEver == false:find a snack|eat that cracker}! //NP
+
+            +   {Playthrough == 2}[Let's go!] //St
+                --  GO GO
+                    #class: sayRupert
+                    +++     [Um thankyou Rupert]
+                        --- GOGOGO
+                            #class: sayRupert
+                            ++++    [Sure]
+                                    -> BeginPlaythrough_End
+            +   {CHOICE_COUNT() == 0} [Right, let's do it.] //PN
+                    -> BeginPlaythrough_End
+
+        -   (BeginPlaythrough_End) 
+                #CLEAR 
+                -> SaveWorld
+
+    = SaveWorld
+        //Temp Variables: Rabbit Mood
+            //Some temps to track the Rabbit's mood. Mostly unused for now.
+            ~ temp Focus = ""
+            ~ temp Activity = ""
+            ~ temp Commitment = ""
+            ~ temp Pronouncement = ""
+            ~ temp Ambition = ""
+        
+        -   (Rabbit_Shuffle1) Rabbit was <> //RP
+                {shuffle:
+                    -   busy <>
+                            ~ Focus = "busy"
+                    -   deeply focused on <>
+                            ~ Focus = "focus"
+                    -   wholeheartedly committed to <>
+                            ~ Focus = "committed"
+                    -   eartip-deep in <>
+                            ~ Focus = "deep"
+                }//RP
+                {shuffle:
+                    -   hitting moblins <>
+                            ~ Activity = "save"
+                    -   paragliding from cliffs <>
+                            ~ Activity = "paraglide"
+                    -   compromising Hyrule's biodiversity <>
+                            ~ Activity = "bioterror"
+                }//RP
+                {shuffle:
+                    -   with great intensity<>
+                            ~ Commitment = "intense"
+                    -   haphazardly<>
+                            ~ Commitment = "haphazard"
+                    -   without regret<>
+                            ~ Commitment = "no regret"
+                }. //RP
+                
+        -   (Rabbit_Shuffle2) "Piggit," <> //RaR
+            -   {shuffle:
+                    -   declared <>
+                            ~ Pronouncement = "declare"
+                    -   said <>
+                            ~ Pronouncement = "say"
+                    -   intoned <>
+                            ~ Pronouncement = "intone"
+                } she, <> //RP
+                
+            -   "I am going to <> //RaP
+            -   {shuffle:
+                    -   save the world<>
+                            ~ Ambition = "save"
+                    -   fight Ganon<>
+                            ~ Ambition = "fight"
+                    -   blow up a deer<>
+                            ~ Ambition = "explode"
+                }!" //RaP
+        
+            +   ["Good lord!"]<> //RRa
+                {Ambition:
+                    - "save":       shave the world rabbit? 
+                    - "fight":      fright gammon rabbit? 
+                    - "explode":    thats hurendus rabbit 
+                }//RRa
+                <> i sed most {~perturberous|inscroopitably|kerpiffled|confustered} //RRA
+        
+        -   but its almost time for {~tea|dins|elvenses} //RRa
+            +  ["I really must query the wisdom of your actions."]
+                --  so den i sed you must be {~doin jokings|floofin my snout|piggin' bonkers|out of yer little burrow} missis but den <>
+                    #class: sayRupert
+            +  [I endeavoured to keep a level head.]
+                --  and den i squeeld my snorting outrage and after five minutes wen I had calmed down a little <>
+                    #class: sayRupert
+                
+        -   rabbit sed
+            #class: sayRupert
+        -   I am quite serious
+        
+        +   (Attempt) ["Oh, I see!", the piglet intoned sagely.] 
+    
+        -   o i see i sed in a brainy way
+            #class: sayRupert
+
+            //Run 1, don't see cracker
+            *   (NotSeen_RunAll) {SeenEver == false} [He was being his very brainy best self.]
+                --  i was actually in a state of some confustion
+                    #class: sayRupert
+                
+                --  It was probably best to just listen as, in his experience, Rabbits are generally right.
+                        #class: sayRupert
+                        -> Listen
+
+            //Run 1, see cracker for the first time
+            *   (NotSeen_Run1) {Playthrough == 1 && SeenEver == false}[Rabbit looked impressed when the small piglet nodded wisely.]
+                --  rabbit asked me why my head was flopping about but i was not really listening cos...
+                        #class: sayRupert
+                        -> SpotCracker
+
+            //Run 2, see cracker for the first time
+            *   (NotSeen_Run2_A) {Playthrough == 2 && SeenEver == false} He tried to look like he was paying attention whilst really looking for a cracker.
+            
+                --  even though my little piggle eyestalks got a bit confustered swivelling this way and that it was worth it
+                        #class: sayRupert
+                        ~ Conversation = "Swivelling"
+                        -> SpotCracker
+
+            //Run 2, don't see cracker
+            *   (NotSeen_Run2_B) {Playthrough == 2 && SeenEver == false} [He held her gaze with one eye, while the other skilfully scanned from sky to skirting board.]
+
+                --  i tryd to do difrent fings wiv difrent peepers n that meant i couldn't tell how far away i was so i boopd her wiv my snoot
+                        #class: sayRupert
+                        ~ Conversation = "SnootBoop"
+                        -> Listen
+
+            //Run 3, see cracker for the first time...?
+            *   (NotSeen_Run3_A) {Playthrough == 3 && SeenEver == false} [It was time; he slyly moved over towards the coffee table, certain it was the only remaining place that might hide a morsel of crumbly crunchy nice.]
+                --  i lay on my back n pushd myself along the floor wiv my back trots becos...
+                        #class: sayRupert
+                        ~ Conversation = "Backstroke"
+                        -> SpotCracker
+
+            //Run 3, don't see cracker
+            *   (NotSeen_Run3_B) {Playthrough == 3 && SeenEver == false} [He looked inwards. The true cracker is the one in the heart of the hungry.]
+                --  i concentratd hard but i got a hedake cos my peepers wer crossd
+                        #class: sayRupert
+                        ~ Conversation = "Zen"
+                        -> Listen
+
+            //Run 2 (saw cracker on run 1)
+            *   (Seen_Run2) {Playthrough == 2 && SeenEver == true} [He checked if the cracker was under the table like he thought it was.] 
+                --  yep der it is //RP
+                        #class: sayRupert
+                        ~ Conversation = "SlyDog"
+                        -> ResetConversation
+
+            //Run 3 (seen before)    
+            *   (Seen_Run3) {Playthrough == 3 && SeenEver == true} He took the cracker, very subtly.Not a single noise did he[ make, so light was his tread.]-
+                --  GIMME CRACKER.
+                        #class: sayRupert
+                        ~ Conversation = "GungHo"
+                        -> ResetConversation
+
+            //Run 2 (saw cracker on Run 1) or Run 3 (saw cracker on Run 2)
+            *   (Seen_Show1st) {SeenEver == true} [That cracker was knocking about, so he slyly scanned the room.]
+                --  i swivelled my peepers this way n that
+                        #class: sayRupert
+                --  but I got dizzy
+                        #class: sayRupert
+                        ~ Conversation = "Swivelling"
+                        -> Listen
+                        
+            //Run 3 (saw cracker on Run 1)
+            *   (Seen_Show2nd) {Seen_Show1st} [It was immensely important to obtain the crunchable delight very quietly and calmly.]
+                --  I JUMPDED ON THE CRACKER
+                        #class: sayRupert
+                --  o no i braked the table
+                        #class: sayRupert
+                        ~ Conversation = "TableIsBroken"
+                        -> Listen
+
+        -   (SpotCracker) He had spotted a Ritz cracker under the coffee table!
+            {CrackerTracker_See()}
+                
+            +   {SpotCracker != 1} It was, however, time to listen to the Rabbit again.
+                    -> Listen
+            +   ->
+                
+        -   befor i took it i desided to listen carefully to the Rabbit as shes doin very srs biz
+                #class: sayRupert
+                        
+        -   n also i have been told not to snuffle under the table
+                #class: sayRupert
+        
+            +   [A reasonable request, the piglet thought.]
+                --  no it makes me a bit sad cos it is my favrit
+                        #class: sayRupert
+
+        -   (Listen) So he said to Rabbit... //RP
+
+            +   (TailConvo) {Conversation == "None" && TailConvo == 0} [I'm all ears, Rabbit.]
+                --  im all ears but finkin about it tho i am actually maybe a bit curly tail
+                        #class: sayRupert
+                    ++  {Playthrough == 1} [This isn't really that important, Rupert.] //PR
+                        --- also trotters
+                                #class: sayRupert
+                            +++ [I'm getting a bit annoyed now.] //PR
+                    ++  {Playthrough == 2} [Get a move on Rupert!] //PR
+                        --- this conversation seems very familiar.
+                                #class: sayRupert
+                        +++ We've had it[ before.]- //PR
+                        --- i wonder if weve had it befor
+                                #class: sayRupert
+                        +++ Lit[erally two minutes ago, Rupert.]- //PR
+                        --- anyway we are wastin valuable biscuit time with your snufflin so help me get the munches peez
+                                #class: sayRupert
+                    ++  {Playthrough == 3} [Sigh.] //St
+                        --- i keep getting this feeling of dangerpoo.
+                                #class: sayRupert
+                            +++ Danger...[?] Poo?
+                            +++ Do you mean[...?] Deja Vu?
+
+            +   (SwivelConvo1) {Conversation == "Swivelling" && SwivelConvo1 < 1} [I'm all ears, Rabbit.] 
+                --  i fink my peepers will fall out
+                        #class: sayRupert
+
+            +   (SwivelConvo2) {Conversation == "Swivelling" && SwivelConvo1 >= 1} [I'm all ears, Rabbit.] 
+                --  no reely, my peepers will tumbl out of my noggin
+                        #class: sayRupert
+
+            +   (SlyConvo) {Conversation == "SlyDog"} [I'm all ears, Rabbit.] 
+                --  just so you no, der is not a fing under the table dat i am finking of havin a munch on. nope nope nope.
+                        #class: sayRupert
+
+            +   (SnootConvo) {Conversation == "SnootBoop"} [I'm all ears, Rabbit.] 
+                --  oh hello
+                        #class: sayRupert
+
+            +   (BackstrokeConvo) {Conversation == "Backstroke"} [I'm all ears, Rabbit.] 
+                --  i am a bit stuck
+                        #class: sayRupert
+
+            +   (ZenConvo) {Conversation == "Zen"} [I'm all ears, Rabbit.] 
+                --  i dont like dis mindfulnis stuff
+                        #class: sayRupert
+
+            +   (TableConvo) {Conversation == "TableIsBroken"} [I'm all ears, Rabbit.] 
+                --  i sowwy i do not no who put a tebbel der
+                        #class: sayRupert
+
+            +   (NullConvo) ->
+        
+        -   (ResetConversation)
+            ~ Conversation = "None"
+            -> Middle

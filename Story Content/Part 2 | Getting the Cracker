@@ -1,0 +1,43 @@
+=== Middle
+        #CLEAR
+        - (StartoftheMiddle) enyway i <> //PR
+        {SeenNow:
+            - true: saw wer der cracker was so i had to figger out wevva it was safe to get it wiv a sneaksum trotter
+                    #class: sayRupert
+                    
+            - false && SeenEver == false: was a bit poopgrumped cos all i want is a bit of snacky cracker and i dont know wer not none of dem ar
+                    #class: sayRupert
+                    ~ ScoreNow = missed
+
+            - false && SeenEver == true: cant quite memby wer der cracker is so... i forgoted what im up to
+                    #class: sayRupert
+        }
+        
+            +   {SeenEver == false && SeenNow == false} [Most troubling.] //PR
+                    ~ Reason_Now_NoMunch = "NeverSeen"
+    
+            +   {SeenEver == true && SeenNow == false} [How forgetful of you.] //PR
+                    ~ Reason_Now_NoMunch = "ForgotLocation"
+            
+            *   (TooScared) {SeenNow == true && TooScared == 0} [Go grab it, brave pig!] //PR
+                    --  I don't fink so. Dangerous.
+                        #class: sayRupert
+                        ~ Reason_Now_NoMunch = "Fearful"
+                    
+            *   (Fearless) {SeenNow == true && TooScared > 0 && TooRespectful > 1} [Of course.] //PR
+                    {CrackerTracker_Get()}
+                    --  i gots it 
+                        #class: sayRupert
+            
+            *   (DefaultGrab) {SeenNow == true} [Of course.] //PR
+                    {CrackerTracker_Get()}
+                    --  i gots it  
+                        #class: sayRupert
+    
+            +   (TooRespectful) {SeenEver == true && TooRespectful < 2} [Grab it, it is your destiny!] //PR
+                --  {TooRespectful == 0: NO IT IS DISRESPIGTFUL. | I HAVE TOLD YOU THIS IS NOT GOOD PIGIQUETTE.}
+                    #class: sayRupert
+                    ~ Reason_Now_NoMunch = "Respectful"
+        
+    - (EndoftheMiddle) -> Ending
+    

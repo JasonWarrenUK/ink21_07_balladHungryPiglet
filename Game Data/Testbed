@@ -1,0 +1,41 @@
+=== Testbed_Endings
+    -   An Ending...
+        
+    -   And so, your Xth attempt ends in failure.
+        -> DONE
+ 
+
+=== Testbed
+    = Testbed_Start
+
+    -   Okay, we're testing the stupid bit. 
+
+    -   About to run this bit of code: Playthrough = 2
+        ~ Playthrough = 2
+
+    -   And now this one: Boomerang = true
+        ~ Boomerang = true
+
+    -   And here we go...
+
+        +   Continue
+            -> Intro.Curtain_Up ->
+
+    -   All done!
+
+        +   Restart the Game
+            --  Sure?
+            ++  Yep
+                #RESTART
+                -> DONE
+
+
+    = Testbed_Empty
+        -   Nothing currently loaded in the Testbed. //MP
+        -   If you expected to see something here, load up Testbed.Ink in Sublime Text and make sure the diverts are working. //MP
+        
+        -   (Testbed_End)
+    
+        +   Okay. //PM
+            ++  NOTE: This should take me back to TestChoose, not the main menu //JP
+                ->->
